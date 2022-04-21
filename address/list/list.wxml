@@ -1,0 +1,25 @@
+<!-- 空白占位 -->
+<view class="holder {{visual}}">
+	<image src="/images/holder.png" />
+	<view>您还没有地址，可以点击底部按钮新建地址</view>
+</view>
+<!-- 地址列表 -->
+<view class="listview">
+	<view class="item" wx:for="{{addressList}}" wx:key="">
+		<view class="bd" bindtap="selectAddress" data-index="{{index}}">
+			<view class="receiver">
+				<view class="firstname">{{item.name}}</view>
+				<view class="gender">{{item.gender == 1 ? '先生' : '女士'}}</view>
+				<view class="mobile">{{item.phone}}</view>
+			</view>
+			<view class="detail">{{item.UAddName}}{{item.addr}}</view>
+		</view>
+		<image class="ft" src="/images/edit.png" bindtap="edit" data-index="{{index}}" />
+	</view>
+</view>
+
+<!-- 添加按钮 -->
+<view class="add-address" bindtap="add">
+	<image src="/images/add.png" class="icon" />
+	<view class="caption">新增地址</view>
+</view>

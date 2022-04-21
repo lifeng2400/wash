@@ -1,0 +1,7 @@
+<!-- 地址选择 -->
+<form bindsubmit="setRemark">
+	<view class="textarea-container">
+		<textarea value="{{remark}}" name="remark" placeholder="请输入备注内容(可不填)" maxlength="-1" auto-height />
+	</view>
+	<button form-type="submit">确定</button>
+</form>

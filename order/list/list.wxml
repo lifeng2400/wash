@@ -1,0 +1,189 @@
+<!-- list.wxml -->
+<!-- 空白占位 -->
+<view class="holder {{visual}}">
+	<image src="/images/holder.png" />
+	<view>您还没有订单，赶快去下单吧</view>
+</view>
+<!-- 订单列表 -->
+
+<view class="weui-navbar">
+                <block wx:for="{{tabs}}" wx:key="*this">
+                    <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+                        <view class="weui-navbar__title">{{item}}</view>
+                    </view>
+                </block>
+</view>
+
+
+<view class="order-container">
+	<!-- 每个订单 -->
+	<view bindtap="showDetail" data-index="{{index}}"  data-oid="{{item.OrderID}}"  class="row" wx:for="{{orderListall}}" wx:key=""  hidden="{{activeIndex != 0}}">	
+	<!-- 商户信息 -->
+		<view class="shop">
+			<image src="/images/logo.jpg" class="logo" />
+			<view class="summary">
+				<view class="title">{{item.order_sn}}</view>
+				<view class="status">
+					<block wx:if="{{item.status == 0}}">待派送</block>
+					<block wx:elif="{{item.status == 1}}">待派送</block>
+					<block wx:elif="{{item.status == 2}}">派送中</block>
+					<block wx:elif="{{item.status == -1}}">等待支付</block>
+				</view>
+			</view>
+		</view>
+		<!-- 商品信息 -->
+		<view class="goods">
+			<view class="title">
+			<block wx:for="{{item.item}}">
+			{{item.goods_title}}x{{item.goods_num}}
+		  </block>
+			</view>
+		
+			<view class="total">{{item.total_amount}}</view>
+		</view>
+		<!-- 支付按钮 -->
+		<view class="payment">
+			<view class="button" data-index="{{index}}"  data-oid="{{item.OrderID}}"  catchtap="{{item.status == -1 && isAdmin == false ? 'payment' : 'showDetail'}}">
+				{{item.status == -1 && isAdmin == false ? '去支付' : '查看'}}
+			</view>
+		</view>
+	</view>
+
+
+	<view bindtap="showDetail" data-index="{{index}}" data-oid="{{item.OrderID}}" class="row" wx:for="{{orderListnopay}}" wx:key=""  hidden="{{activeIndex != 1}}">	
+	<!-- 商户信息 -->
+		<view class="shop">
+			<image src="/images/logo.jpg" class="logo" />
+			<view class="summary">
+				<view class="title">{{item.order_sn}}</view>
+				<view class="status">
+					<block wx:if="{{item.status == 0}}">待派送</block>
+					<block wx:elif="{{item.status == 1}}">待派送</block>
+					<block wx:elif="{{item.status == 2}}">派送中</block>
+					<block wx:elif="{{item.status == -1}}">等待支付</block>
+				</view>
+			</view>
+		</view>
+		<!-- 商品信息 -->
+		<view class="goods">
+			<view class="title">
+			<block wx:for="{{item.item}}">
+			{{item.goods_title}}x{{item.goods_num}}
+		  </block>
+			</view>
+		
+			<view class="total">{{item.total_amount}}</view>
+		</view>
+		<!-- 支付按钮 -->
+		<view class="payment">
+			<view class="button" data-index="{{index}}"  data-oid="{{item.OrderID}}"  catchtap="{{item.status == -1 && isAdmin == false ? 'payment' : 'showDetail'}}">
+				{{item.status == -1 && isAdmin == false ? '去支付' : '查看'}}
+			</view>
+		</view>
+	</view>
+
+	
+	<view bindtap="showDetail" data-index="{{index}}" data-oid="{{item.OrderID}}" class="row" wx:for="{{orderListnoget}}" wx:key=""  hidden="{{activeIndex != 2}}">	
+	<!-- 商户信息 -->
+		<view class="shop">
+			<image src="/images/logo.jpg" class="logo" />
+			<view class="summary">
+				<view class="title">{{item.order_sn}}</view>
+				<view class="status">
+					<block wx:if="{{item.status == 0}}">待派送</block>
+					<block wx:elif="{{item.status == 1}}">待派送</block>
+					<block wx:elif="{{item.status == 2}}">派送中</block>
+					<block wx:elif="{{item.status == -1}}">等待支付</block>
+				</view>
+			</view>
+		</view>
+		<!-- 商品信息 -->
+		<view class="goods">
+			<view class="title">
+			<block wx:for="{{item.item}}">
+			{{item.goods_title}}x{{item.goods_num}}
+		  </block>
+			</view>
+		
+			<view class="total">{{item.total_amount}}</view>
+		</view>
+		<!-- 支付按钮 -->
+		<view class="payment">
+			<view class="button" data-index="{{index}}"  data-oid="{{item.OrderID}}"  catchtap="{{item.status == -1 && isAdmin == false ? 'payment' : 'showDetail'}}">
+				{{item.status == -1 && isAdmin == false ? '去支付' : '查看'}}
+			</view>
+		</view>
+	</view>
+
+
+
+	<view bindtap="showDetail" data-index="{{index}}"  data-oid="{{item.OrderID}}"   class="row" wx:for="{{orderListnoput}}" wx:key=""  hidden="{{activeIndex != 3}}">	
+	<!-- 商户信息 -->
+		<view class="shop">
+			<image src="/images/logo.jpg" class="logo" />
+			<view class="summary">
+				<view class="title">{{item.order_sn}}</view>
+				<view class="status">
+					<block wx:if="{{item.status == 0}}">待派送</block>
+					<block wx:elif="{{item.status == 1}}">待派送</block>
+					<block wx:elif="{{item.status == 2}}">派送中</block>
+					<block wx:elif="{{item.status == -1}}">等待支付</block>
+				</view>
+			</view>
+		</view>
+		<!-- 商品信息 -->
+		<view class="goods">
+			<view class="title">
+			<block wx:for="{{item.item}}">
+			{{item.goods_title}}x{{item.goods_num}}
+		  </block>
+			</view>
+		
+			<view class="total">{{item.total_amount}}</view>
+		</view>
+		<!-- 支付按钮 -->
+		<view class="payment">
+			<view class="button" data-index="{{index}}"  data-oid="{{item.OrderID}}"  catchtap="{{item.status == -1 && isAdmin == false ? 'payment' : 'showDetail'}}">
+				{{item.status == -1 && isAdmin == false ? '去支付' : '查看'}}
+			</view>
+		</view>
+	</view>
+
+
+	<view bindtap="showDetail" data-index="{{index}}"   data-oid="{{item.OrderID}}"  class="row" wx:for="{{orderListok}}" wx:key=""  hidden="{{activeIndex != 4}}">	
+	<!-- 商户信息 -->
+		<view class="shop">
+			<image src="/images/logo.jpg" class="logo" />
+			<view class="summary">
+				<view class="title">{{item.order_sn}}</view>
+				<view class="status">
+					<block wx:if="{{item.status == 0}}">待派送</block>
+					<block wx:elif="{{item.status == 1}}">待派送</block>
+					<block wx:elif="{{item.status == 2}}">派送中</block>
+					<block wx:elif="{{item.status == -1}}">等待支付</block>
+				</view>
+			</view>
+		</view>
+		<!-- 商品信息 -->
+		<view class="goods">
+			<view class="title">
+			<block wx:for="{{item.item}}">
+			{{item.goods_title}}x{{item.goods_num}}
+		  </block>
+			</view>
+		
+			<view class="total">{{item.total_amount}}</view>
+		</view>
+		<!-- 支付按钮 -->
+		<view class="payment">
+			<view class="button" data-index="{{index}}" data-oid="{{item.OrderID}}" catchtap="{{item.status == -1 && isAdmin == false ? 'payment' : 'showDetail'}}">
+				{{item.status == -1 && isAdmin == false ? '去支付' : '查看'}}
+			</view>
+		</view>
+	</view>
+
+
+</view>
+<view class="loading-indicator">
+	{{loadingTip}}
+</view>

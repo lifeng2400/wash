@@ -1,0 +1,562 @@
+
+/**index.wxss**/
+@import '/images/weui.wxss';
+/* 搜索 */
+.serach{
+  width:100%;
+  height:88rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  z-index:100;
+  background-color: #efeff4;
+}
+.searchB{
+  width:700rpx;
+  height: 56rpx;
+  margin: 0 auto;
+  background-color: #fff;
+  border-radius: 28rpx;
+  z-index: 1000;
+  text-align: center;
+  font-size: 26rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.searchB image{
+  width: 26rpx;
+  height: 26rpx;
+  margin-right:10rpx;
+  
+}
+.searchB .txtColor{
+  color: #B2B2B2
+}
+.myCont{
+  margin-top:88rpx;
+}
+/* swiper */
+swiper{
+  width:100%;
+  height:320rpx;
+}
+swiper-item{
+  width:100%;
+  height:100%;
+}
+swiper-item image{
+  height:100%;
+  width:100%
+}
+.wx-swiper-dot{
+    height: 12rpx !important;
+    width: 12rpx !important;
+}
+.wx-swiper-dot-active{
+    width:44rpx !important; 
+    height:12rpx !important;
+    border-radius: 6rpx !important;
+}
+
+/* hotList */
+.hotList{
+  display: flex;
+  height:190rpx;
+  width:100%;
+  background-color: #fff;
+  font-size: 24rpx;
+  color:#282828
+}
+.hotList view{
+  flex:1;
+  text-align: center;
+}
+.hotList view image{
+  width:88rpx;
+  height:88rpx;
+  display: block;
+  margin:30rpx  auto 14rpx;
+}
+
+/* shop list */
+.shopSection{
+  width:100%;
+  height:auto;
+}
+
+.shopSection .shopTitle{
+  width:100%;
+  height:108rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30rpx;
+  color:#282828;
+}
+.shopSection .shopTitle image{
+  width: 26rpx;
+  height: 30rpx;
+  margin-right:12rpx;
+}
+.shopSection .shopList{
+  padding:15rpx;
+  display: grid;
+  grid-template-columns:repeat(2, 1fr);
+  justify-items:center;
+}
+.shopSection .shopList .listItem{
+ width:340rpx;
+ /* height:504rpx; */
+ background-color: #fff;
+ border-radius: 12rpx;
+ font-size:24rpx;
+ margin-bottom: 40rpx;
+ position: relative;
+}
+.shopList .listItem image{
+  width: 340rpx;
+  height: 340rpx;
+}
+.shopList .listItem .itemBottom{
+  padding:0 24rpx;
+}
+.shopList .listItem .itemBottom .title{
+  word-break: break-all;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom:26rpx;
+}
+.shopList .listItem .itemBottom .price{
+  /* position: absolute;
+  bottom:24rpx; */
+  display: flex;
+  align-items: flex-end;
+}
+.itemBottom .price view{
+  flex:1;
+}
+.itemBottom .price view text:nth-child(1){
+  color:#F44225 ;
+  margin-right:24rpx;
+
+}
+.itemBottom .price view text:nth-child(2){
+  color:#C5C5C5;
+  font-size:18rpx;
+  text-decoration:line-through;
+}
+.shopList .listItem .itemBottom button{
+  width: 80rpx;
+  height: 42rpx;
+  border-radius: 12rpx;
+  background-color:#F44225 ;
+  color:#fff;
+  font-size:24rpx;
+  padding:0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* 底线 */
+.bottomLine{
+  color:#C5C5C5;
+  font-size:24rpx;
+  text-align: center;
+  padding:42rpx;
+  position: relative;
+}
+.bottomLine:before, .bottomLine:after { 
+    content: ''; 
+    position: absolute;   
+    top: 50%; 
+    background: #C5C5C5;  
+    width:64rpx;           
+    height: 2rpx;  
+} 
+.bottomLine:before{
+  left:206rpx;
+}
+.bottomLine:after{
+  right:206rpx;
+}
+
+ /*头部部分*/
+
+/*店招*/
+.hd {
+	background: #4CAF50;
+	display: flex;
+	flex-direction: row;
+	padding: 10px 0 15px 0;
+	position:relative;
+}
+
+/*.hd:after {
+	content: " ";
+	height: 8px;
+	width: 8px;
+	border-width: 2px 2px 0 0;
+	border-color: #fff;
+	border-style: solid;
+	transform:rotate(45deg);
+	position: absolute;
+	margin-top: -4px;
+	top: 50%;
+	right: 22px;
+}*/
+
+/*logo*/
+.logo {
+	width: 80px;
+	height: 80px;
+	border-radius: 3px;
+	margin: 0 10px;
+}
+
+/*店名与公告*/
+.banner {
+	color: #fff;
+	display: flex;
+	flex-direction: column;
+	margin-top: 10px;
+	flex: 1;
+}
+
+/*店名*/
+.seller {
+	font-weight: bold;
+	font-size: 18px;
+}
+
+/*公告*/
+.notice {
+	margin-top: 15px;
+	font-size: 12px;
+}
+
+/*营业时间*/
+.business-time {
+	margin-top: 10px;
+	font-size: 12px;
+}
+
+
+/*主体部分*/
+
+/*分类与菜品*/
+.bd {
+	margin-top: 6px;
+	padding-bottom: 50px;
+	display: flex;
+	flex-direction: row;
+}
+
+/*分类容器*/
+.category-container {
+	width: 30%;
+}
+
+/*分类项*/
+.category-item {
+	background: #f5f5f5;
+	height: 50px;
+	position: relative;
+	border-bottom: 1px solid #ededed;
+}
+
+/*分类文本*/
+.category-content {
+	line-height: 50px;
+	font-size: 14px;
+	color: #666;
+	padding-left: 10px;
+}
+
+/*分类文本高亮*/
+.category-item-active {
+	background: #fff;
+	display: flex;
+	flex-direction: row;
+}
+
+/*分类文本高亮左侧标识*/
+.category-item-active:before {
+	content: "";
+	width: 3px;
+	background: #0099ff;
+}
+
+/*红点*/ 
+.badge {
+	position: absolute;
+	right: 4px;
+	top: 4px;
+	min-width: 12px;
+	height: 12px;
+	border-radius: 12px;
+	background: #ff461d;
+	color: white;
+	padding: 3px;
+	font-size: 12px;
+	text-align: center;
+	line-height: 14px;
+	z-index: 999;
+}
+
+.badge-offset {
+	top: -8px;
+}
+
+/*菜品列表容器*/
+.food-container {
+	width: 70%;
+	/*box-sizing: border-box;*/
+	margin-left: 10px;
+}
+
+/*菜品列表*/
+.food-item {
+	display: flex;
+	flex-direction: row;
+	padding: 5px 0;
+	background: white;
+	border-bottom: 1px solid #f1f1f1;
+}
+
+/*主图容器*/
+.food-hd {
+	width: 30%;
+}
+
+/*主图*/
+.thumb {
+	width: 60px;
+	height: 60px;
+	margin-left: 10px;
+	margin-right: 10px;
+	margin-top: 5px;
+	display: inline-table;
+}
+
+/*商品信息*/
+.food-bd {
+	width: 70%;
+	margin-left: 10px;
+}
+
+/*菜名*/
+.title {
+	font-weight: bold;
+	font-size: 16px;
+	padding: 4px 0;
+	color: #333;
+	margin-left: 0;
+}
+
+/*简述*/
+.summary {
+	padding: 4px 4px 4px 0;
+	font-size: 12px;
+	color: #9e9e9e;
+
+}
+
+/*价格与数量加减器*/
+.price-stepper {
+	padding: 4px 0;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+}
+
+/*价格*/
+.price {
+	flex: 1;
+	font-size: 18px;
+	color: #ff6000;
+}
+
+/*人民币符号*/
+.price:before {
+	content: "￥";
+	font-size: 14px;
+}
+
+/*加减器*/
+.stepper {
+	flex: 1;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	align-items: center;
+	padding-right: 5px;
+}
+
+/*加号*/
+.symbol {
+	width: 20px;
+	height: 20px;
+	margin: 0 10px;
+}
+
+/*数量*/
+.value {
+	font-size: 14px;
+}
+
+/*购物车模块*/
+.ft {
+	width: 100%;
+	height: 50px;
+	background: #474749;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	display: flex;
+	flex: row;
+	z-index: 999;
+}
+
+/*购物车容器*/
+.cart-container {
+	width: 20%;
+	position: relative;
+}
+
+/*购物车图标*/
+.cart {
+	position: absolute;
+	top: -8px;
+	left: 15px;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 5px solid #4d4d4f;
+}
+
+/*费用*/
+.fee {
+	width: 50%;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.express-fee:before {
+	content: '配送费￥';
+}
+
+/*菜品小计*/
+.food-fee {
+	flex: 1;
+	line-height: 1.5;
+	font-size: 18px;
+	margin-left: 4px;
+}
+
+.food-fee:before {
+	content: '￥';
+}
+
+/*配送费*/
+.express-fee {
+	flex: 1;
+	line-height: 1.5;
+	font-size: 12px;
+}
+
+/*结算按钮*/
+.checkout {
+	width: 30%;
+	background: #38ca73;
+	color: white;
+	line-height: 50px;
+	text-align: center;
+}
+
+.checkout-disabled {
+	background: #666;
+	font-size: 14px;
+}
+
+/*购物车容器*/
+/*弹窗主体*/
+.modal-content {
+	position: fixed;
+	bottom: -235px;
+	left: 0;
+	width: 100%;
+	/*height: 235px;*/
+	/*box-shadow: 10rpx 0 30rpx rgba(0,0,0,.9);*/
+	margin-top: 5px;
+	background: #fff;
+	z-index: 99;
+}
+
+/*遮罩层*/
+.modal-mask {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000;
+    opacity: 0;
+}
+
+/*弹窗头部*/
+.modal-header {
+	font-size: 16px;
+	color: #666;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	line-height: 30px;
+	padding: 4px 10px;
+	background: #eceff1;
+}
+
+/*购物车字样*/
+.modal-title {
+	text-align: center;
+	flex: 1;
+}
+
+/*关闭按钮*/
+.modal-close {
+	width: 20px;
+	height: 20px;
+}
+
+/*内容区域*/
+.modal-body {
+	font-size: 14px;
+	/*height: 145px;*/
+	max-height: 295px;
+}
+
+.modal-body .item {
+	align-items: center;
+	border-bottom: 1px solid #eee;
+}
+
+/*小计*/
+.modal-body .fee {
+	color: #ff6000;
+	text-align: right;
+}
+
+.modal-body .fee:before {
+	content: '￥';
+}

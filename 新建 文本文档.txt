@@ -1,0 +1,105 @@
+初始化一个Git仓库，使用git init命令。
+
+添加文件到Git仓库，分两步：
+
+使用命令git add <file>，注意，可反复多次使用，添加多个文件；
+使用命令git commit -m <message>，完成。
+
+需要添加 你的签名  或者直接 改config
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+
+
+要关联一个远程库，使用命令git remote add origin git@server-name:path/repo-name.git；
+
+我的是                            git remote add origin git@github.com:lifeng2400/wash.git
+或者                               git remote add origin https://github.com/lifeng2400/wash.git
+
+移除仓库，重新添加
+git remote rm origin
+git remote add origin https://github.com/XXX
+
+$ git remote -v
+origin  git@github.com:michaelliao/learn-git.git (fetch)
+origin  git@github.com:michaelliao/learn-git.git (push)
+然后，根据名字删除，比如删除origin：
+
+$ git remote rm origin
+
+关联一个远程库时必须给远程库指定一个名字，origin是默认习惯命名；
+
+关联后，使用命令git push -u origin master第一次推送master分支的所有内容；
+
+此后，每次本地提交后，只要有必要，就可以使用命令git push origin master推送最新修改；
+
+
+
+$ git clone git@github.com:michaelliao/gitskills.git
+
+
+
+
+项目名称最好与本地库保持一致：
+
+然后，我们在本地库上使用命令git remote add把它和Gitee的远程库关联：
+
+git remote add origin git@gitee.com:liaoxuefeng/learngit.git
+之后，就可以正常地用git push和git pull推送了！
+
+如果在使用命令git remote add时报错：
+
+git remote add origin git@gitee.com:liaoxuefeng/learngit.git
+fatal: remote origin already exists.
+这说明本地库已经关联了一个名叫origin的远程库，此时，可以先用git remote -v查看远程库信息：
+
+git remote -v
+origin	git@github.com:michaelliao/learngit.git (fetch)
+origin	git@github.com:michaelliao/learngit.git (push)
+可以看到，本地库已经关联了origin的远程库，并且，该远程库指向GitHub。
+
+我们可以删除已有的GitHub远程库：
+
+git remote rm origin
+再关联Gitee的远程库（注意路径中需要填写正确的用户名）：
+
+git remote add origin git@gitee.com:liaoxuefeng/learngit.git
+此时，我们再查看远程库信息：
+
+git remote -v
+origin	git@gitee.com:liaoxuefeng/learngit.git (fetch)
+origin	git@gitee.com:liaoxuefeng/learngit.git (push)
+现在可以看到，origin已经被关联到Gitee的远程库了。通过git push命令就可以把本地库推送到Gitee上。
+
+有的小伙伴又要问了，一个本地库能不能既关联GitHub，又关联Gitee呢？
+
+答案是肯定的，因为git本身是分布式版本控制系统，可以同步到另外一个远程库，当然也可以同步到另外两个远程库。
+
+使用多个远程库时，我们要注意，git给远程库起的默认名称是origin，如果有多个远程库，我们需要用不同的名称来标识不同的远程库。
+
+仍然以learngit本地库为例，我们先删除已关联的名为origin的远程库：
+
+git remote rm origin
+然后，先关联GitHub的远程库：
+
+git remote add github git@github.com:michaelliao/learngit.git
+注意，远程库的名称叫github，不叫origin了。
+
+接着，再关联Gitee的远程库：
+
+git remote add gitee git@gitee.com:liaoxuefeng/learngit.git
+同样注意，远程库的名称叫gitee，不叫origin。
+
+现在，我们用git remote -v查看远程库信息，可以看到两个远程库：
+
+git remote -v
+gitee	git@gitee.com:liaoxuefeng/learngit.git (fetch)
+gitee	git@gitee.com:liaoxuefeng/learngit.git (push)
+github	git@github.com:michaelliao/learngit.git (fetch)
+github	git@github.com:michaelliao/learngit.git (push)
+如果要推送到GitHub，使用命令：
+
+git push github master
+如果要推送到Gitee，使用命令：
+
+git push gitee master

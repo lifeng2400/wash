@@ -1,0 +1,178 @@
+
+.container {
+	margin-bottom: 120rpx;
+}
+
+/*地址容器*/
+.address-container {
+	margin-bottom: -10px;
+}
+
+/*收货地址*/
+.address {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	background: white;
+	position: relative;
+}
+
+.address .title {
+	font-size: 14px;
+}
+
+/*地理定位图标*/
+.location {
+	width: 20px;
+	height: 20px;
+	margin-left: 10px;
+}
+
+/*航邮花边*/
+.mail {
+	width: 100%;
+	margin-bottom: 32rpx;
+}
+
+/*.商品清单信息*/
+
+/*备注信息*/
+.remark {
+	background: white;
+	margin-top: 10px;
+
+}
+
+.title-label {
+	flex: 1;
+}
+
+.arrow {
+	flex: 1;
+}
+
+.subtitle-label {
+	text-align: right;
+	margin-right: 30px;
+	flex: 4;
+}
+
+/*备注文字截取*/
+.remark-title {
+	overflow: hidden; 
+	text-overflow: ellipsis; 
+	white-space: nowrap;
+}
+
+/*picker选择器*/
+picker {
+	flex: 2;
+}
+
+.disperse {
+	justify-content: space-between;
+}
+/*.备注信息*/
+
+
+/*底部操作区域*/
+.footer {
+	display: flex;
+	flex-direction: row;
+	height: 100rpx;
+	line-height: 100rpx;
+	color: white;
+	position: fixed;
+	width: 100%;
+	bottom: 0;
+	left: 0;
+	font-size: 16px;
+}
+
+.footer .payment {
+	width: 70%;
+	background: #3d3d3f;
+	padding-left: 15px;
+}
+
+.footer .payment:before {
+	content: "待支付￥"
+}
+
+.footer .checkout {
+	width: 30%;
+	background: #38ca73;
+	text-align: center;
+}
+
+/*.底部操作区域*/
+
+/*用户地址项*/
+
+/*每一项*/
+.address-container .item {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px 0;
+	border-bottom: 1px solid #ddd;
+	background: white;
+	margin-left: 0;
+	line-height: initial;
+}
+
+/*主体内容*/
+.address-container .item .bd {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+/*收件人信息*/
+.address-container .item .bd .receiver {
+	color: black;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	margin-left: 10px;
+}
+
+/*姓氏*/
+.address-container .item .bd .receiver .firstname {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+.radio
+{
+margin-right: 70rpx;
+}
+
+/*性别*/
+.address-container .item .bd .receiver .gender {
+	font-size: 12px;
+	margin: 0 10px;
+}
+
+/*手机号码*/
+.address-container .item .bd .receiver .mobile {
+	font-size: 12px;
+}
+
+/*收件地址*/
+.address-container .item .bd .detail {
+	color: #999;
+	font-size: 14px;
+	margin: 5px 0;
+	margin-left: 10px;
+}
+
+
+ .noable {
+  border-color: #ccc;
+  color: #ccc;
+}

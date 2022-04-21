@@ -1,0 +1,59 @@
+<!-- 店铺设置 -->
+<view class="userinfo">
+	<image class="userinfo-avatar" src="{{new_logo ? new_logo : seller.logo.url}}" background-size="cover" bindtap="chooseImage" mode="aspectFill"></image>
+</view>
+<form onsubmit="updateSetting">
+	<view class="item">
+		<view class="title">店名</view>
+		<view class="subtitle">
+			<input type="text" name="name" value="{{seller.name}}" placeholder="请输入店铺名称" />
+		</view>
+	</view>
+	<view class="item">
+		<view class="title">电话</view>
+		<view class="subtitle">
+			<input type="number" name="telephone" value="{{seller.telephone}}" placeholder="请输入店铺电话" />
+		</view>
+	</view>
+	<view class="item">
+		<view class="title">营业时间</view>
+		<view class="subtitle">
+			<picker mode="time" value="{{seller.business_start}}" data-field="business_start" bindchange="bindTimeChanged">
+				<view class="picker">
+					{{seller.business_start}}
+				</view>
+			</picker>
+			<view class="divide">-</view>
+			<picker mode="time" value="{{seller.business_end}}" data-field="business_end" bindchange="bindTimeChanged">
+				<view class="picker">
+					{{seller.business_end}}
+				</view>
+			</picker>
+		</view>
+	</view>
+	<view class="item">
+		<view class="title">地址</view>
+		<view class="subtitle">
+			<input type="text" name="address" value="{{seller.address}}" placeholder="请输入店铺地址" />
+		</view>
+	</view>
+	<view class="item">
+		<view class="title">配送费</view>
+		<view class="subtitle">
+			<input type="text" name="express_fee" value="{{seller.express_fee}}" placeholder="请输入配送费" />
+		</view>
+	</view>
+	<view class="item">
+		<view class="title">起送金额</view>
+		<view class="subtitle">
+			<input type="text" name="min_amount" value="{{seller.min_amount}}" placeholder="请输入起送金额" />
+		</view>
+	</view>
+	<view class="item">
+		<view class="title">公告</view>
+		<view class="subtitle">
+			<textarea placeholder="选填，可以填写公告与简介" name="notice" value="{{seller.notice}}"></textarea>
+		</view>
+	</view>
+	<button form-type="submit" type="primary" class="update-button">提交</button>
+</form>

@@ -1,0 +1,81 @@
+<!--pages/sharecode/sharecode.wxml-->
+<view class='cont cont1'>
+  <!-- <view class='t1'>我的邀请码</view>
+  <view class='t1'>221296</view> -->
+  <view class='t1'>分享您的邀请码，让更多好友加入我们， 同时您也可以获得奖励
+  </view>
+  <view class='t3'>
+    <view class='view1'>
+      <view class='view2'>
+        <image src='/images/icons/sharecode_pic_money.png'></image>
+        <view class='view3'  wx:if="{{uleve>0}}">
+          <text>预计收益</text>
+          <text>￥{{uminfo.mymycount}}</text>
+        </view>
+        <view class='view3'  wx:else>
+          <text>VIP才有收益</text>
+       
+        </view>
+      </view>
+    </view>
+    <view class='view1'>
+      <view class='view2'>
+        <image src='/images/icons/sharecode_pic_people.png'></image>
+        <view class='view3'>
+          <text>邀请人数</text>
+          <text>{{uminfo.ucount}}</text>
+        </view>
+      </view>
+    </view>
+
+  </view>
+</view>
+ <view class='cont cont2' wx:if="{{uleve<1}}">
+  <view>你还不是VIP请在平台成功下单一次升级为VIP</view>
+  <view>
+       <navigator class="goshop" openType="switchTab"  url="/shop/menu/menu">
+   去下单升级为VIP
+      </navigator>
+  </view>
+</view> 
+
+
+
+<view class='bottomCont'>
+  <view open-type="share">
+      <button open-type="share">
+        <image src='/images/details_share_pop_ic_wechat.png'></image><text>分享给朋友</text>
+        </button> 
+  </view>
+
+
+  <view bindtap='showPoster'>
+    <image src='/images/details_share_pop_ic_poster.png'></image>
+    <text>生成海报</text>
+  </view>
+</view>
+
+
+<view class="wx-popup" hidden="{{flagPoster}}">
+<view class='popC'>
+
+
+<view class='popup-containerP' catchtap='showPoster'>
+ 
+    <view class='contPop'>
+      <image src='{{shareImg}}' mode="widthFix" data-src="{{shareImg}}" bindtap="previewImage"></image>
+      <view class='miniName'>分享到朋友圈和群</view>
+      <view class='notice'>
+        我的专属邀请码
+      </view>
+
+    </view>
+  </view> 
+
+  <view class='twoBtn'>
+  <view><button catchtap='saveImg'>保存海报</button></view>
+  <view><button catchtap='saveEq'>保存二维码</button></view>
+  <view><button catchtap='hidePoster'>关闭</button></view>   
+  </view>
+  </view>
+</view>

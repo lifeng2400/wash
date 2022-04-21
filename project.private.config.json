@@ -1,0 +1,126 @@
+{
+  "setting": {},
+  "condition": {
+    "plugin": {
+      "list": []
+    },
+    "game": {
+      "list": []
+    },
+    "gamePlugin": {
+      "list": []
+    },
+    "miniprogram": {
+      "list": [
+        {
+          "name": "member/vip/index",
+          "pathName": "member/vip/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "member/index/index",
+          "pathName": "member/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "member/sharecode/sharecode",
+          "pathName": "member/sharecode/sharecode",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "shop/menu/menu",
+          "pathName": "shop/menu/menu",
+          "query": "uid=2",
+          "scene": null
+        },
+        {
+          "name": "member/sharecode/sharecode",
+          "pathName": "member/sharecode/sharecode",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "member/person/person",
+          "pathName": "member/person/person",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "order/list/list",
+          "pathName": "order/list/list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "order/detail/detail",
+          "pathName": "order/detail/detail",
+          "query": "objectId=24",
+          "scene": null
+        },
+        {
+          "name": "order/list/list",
+          "pathName": "order/list/list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "member/sharecode/sharecode",
+          "pathName": "member/sharecode/sharecode",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "address/list/list",
+          "pathName": "address/list/list",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "address/add/add",
+          "pathName": "address/add/add",
+          "query": "objectId=1",
+          "scene": null
+        },
+        {
+          "name": "member/person/person",
+          "pathName": "member/person/person",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "shop/index/index",
+          "pathName": "shop/index/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "shop/index/index",
+          "pathName": "shop/index/index",
+          "query": "uid=2",
+          "scene": null
+        },
+        {
+          "name": "member/cash/balance",
+          "pathName": "member/cash/balance",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "shop/map/index",
+          "pathName": "shop/map/index",
+          "query": "",
+          "scene": null
+        },
+        {
+          "name": "shop/map/index",
+          "pathName": "shop/map/index",
+          "query": "",
+          "scene": null
+        }
+      ]
+    }
+  }
+}

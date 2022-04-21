@@ -1,0 +1,108 @@
+<!--pages/menu/menu.wxml-->
+<import src="../../common/foodPage.wxml" />
+<import src="../../common/foodCartPage.wxml" />
+
+<view class="totalcontainer" disable-scroll="true">
+<!-- 店招 -->
+
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="{{indicatoractivecolor}}">
+  <block wx:for="{{imgUrls}}" wx:key='{{index}}'>
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class='details'>
+  <view class='detailsTop'>
+    <view class='price'>
+      <text>¥{{good.GPrice}} </text>
+      <!-- <text> ¥{{good.original_price}}</text> -->
+    </view>
+    <view class='num'>销量：{{good.sales}}件</view>
+  </view>
+  <view class='detailsMid'>
+    <view>{{good.title}}
+    </view>
+    <!-- <view class='share' bindtap='showPopup'>
+      <image src='/images/icons/details_title_ic_share.png'></image> 分享</view> -->
+  </view>
+  <view class='detailsBottom'>{{good.G_Introduce}}</view>
+</view>
+
+
+
+<view class='choose' wx:if="{{true}}">
+  <view class='chooseView'>
+    <text>颜色</text>
+    <block wx:for="{{color}}" wx:key='{{index}}'>
+      <button class="{{classIndexColor == index?'btn1':'btn2'}}" data-index="{{index}}" bindtap='chooseColor'>{{item}}</button>
+    </block>
+  </view>
+  <view class='chooseView'>
+    <text>规格</text>
+   <block wx:for="{{specs}}" wx:key='{{index}}'>
+      <button class="{{classIndexSpecs == index?'btn1':'btn2'}}" data-index="{{index}}" bindtap='chooseSpecs'>{{item}}</button>
+    </block>
+  </view>
+  <view class='chooseView'>
+    <view class='chooseViewL'>
+      <text class='text'>数量</text>
+      <view class="stepper">
+        <!-- 减号 -->
+        <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+        <!-- 数值 -->
+        <input type="number" bindchange="bindManual" value="{{num}}" />
+        <!-- 加号 -->
+        <text class="normal" bindtap="bindPlus">+</text>
+      </view>
+    </view>
+    <!-- <text class='chooseViewLR'>库存：200件  </text> -->
+  </view>
+</view>
+<view class="weui-tab">
+  <view class="weui-navbar">
+    <block wx:for="{{tabs}}" wx:key="*this">
+      <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+        <view class="weui-navbar__title">{{item}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="weui-tab__panel">
+    <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+    <rich-text nodes="{{good.content}}"></rich-text>
+    </view>
+  </view>
+</view>
+
+
+  <template is="foodPage" data="{{showmenu, selected, howMuch, cost, pullBar, foodPageHeight,seller}}" />
+  <view class="mask" wx:if="{{showCart}}" bindtap='closeCart'></view>
+  <template is="foodCartPage" data="{{animationData, foodChoosed, scrollHeight, cartHeight}}" />
+
+
+	<view class="kf">
+			<image class="kf-img" src="/images/telephone.png" bindtap="call"></image>
+	</view>
+</view>
+
+
+<view class="mask" wx:if="{{notice_status}}" bindtap='hideNotice' style="background: #000; z-index: 100;"></view>
+<view class="notice" id="notice" wx:if="{{notice_status}}" bindtap="tapNotice">
+        <view class="box">
+          <view class="box-hd">
+            <text class="box-title">详细信息</text>
+            <image class="box-close" src="/images/close.png" bindtap="hideNotice"></image>
+          </view>
+          <view class="box-bd">
+            <scroll-view scroll-y class="items" style="height:750rpx" show-scrollbar='{{false}}'>
+            <rich-text nodes="{{ mycontent }}"></rich-text>
+            </scroll-view>
+          </view>
+
+<view class='copright'>
+<view>技术支持：云南昆明</view>
+<view  bindtap='call'  >客服电话：13378719129</view>
+</view>
+
+        </view>
+</view>

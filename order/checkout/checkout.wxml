@@ -1,0 +1,92 @@
+<!-- checkout.wxml -->
+<!-- 地址选择 -->
+<view class="container">
+	<view class="address-container">
+		<!-- 用户尚未添加地址时 -->
+		<view class="address" bindtap="selectAddress" wx:if="{{!address}}">
+			<image src="/images/location.png" class="location" />
+			<view class="title">请选择一个收货地址</view>
+			<view class="arrow"></view>
+		</view>
+		<!-- 用户已添加过地址 -->
+		<view class="item" wx:else>
+			<image src="/images/location.png" class="location" />
+			<view class="bd" bindtap="selectAddress">
+				<view class="receiver">
+					<view class="firstname">{{address.name}}</view>
+					<view class="gender">{{address.gender == 1 ? '先生' : '女士'}}</view>
+					<view class="mobile">{{address.phone}}</view>
+				</view>
+				<view class="detail">{{address.UAddName}}{{address.addr}}</view>
+			</view>
+			<view class="arrow"></view>
+		</view>
+		<image src="/images/mail.png" class="mail" mode="widthFix" />
+	</view>
+	<!-- 支付方式 -->
+	<!-- 在线支付与货到付款 -->
+	<!-- 商品清单 -->
+	<view class="info">
+		<!-- 店铺信息 -->
+		<view class="header">
+			<image src="{{seller.logo.url}}" class="logo" />
+			<view class="title">
+
+			<view class="input-container input-container-radio">
+				<radio-group name="gender" class="radio-group" bindchange="radioChange">
+					<label class="radio">
+						<radio value="1" checked="{{takemode == 1 ? true : false}}" />上门收货
+					</label>
+					<label class="radio">
+						<radio value="0" checked="{{takemode == 0 ? true : false}}" />自送自提免邮费
+					</label>
+				</radio-group>
+			</view>
+		</view>
+
+
+
+		</view>
+
+
+				<!-- 配送费 -->
+		<view class="item">
+			<view class="express-label">配送费</view>
+			<view class="express-fee">{{showexpress_fee}}</view>
+		</view>
+		<!-- 清单 -->
+		<view class="list">
+			<view class="item" wx:for="{{carts}}" wx:key="">
+				<view class="title">{{item.foodName}}</view>
+				<view class="quantity">{{item.numb}}</view>
+				<view class="price">{{item.price}}</view>
+			</view>
+
+		</view>
+
+		<!-- 总计 -->
+		<view class="item">
+			<view class="amount">{{total}}</view>
+		</view>
+	</view>
+	<!-- 备注信息 -->
+	<view class="remark">
+		<view class="item disperse">
+			<view class="title-label">上门取件时间段</view>
+				<picker bindchange="bindPickerChange" value="{{personCountIndex}}" range="{{personCountArray}}">
+					<view class="subtitle-label">{{personCountArray[personCountIndex]}}</view>
+				</picker>
+			<view class="arrow"></view>
+		</view>
+		<view class="item disperse" bindtap="naviToRemark">
+			<view class="title-label">订单备注</view>
+			<view class="subtitle-label remark-title">{{remark ? remark : '还有什么要告诉我们的?'}}</view>
+			<view class="arrow"></view>
+		</view>
+	</view>
+</view>
+<!-- 提交订单 -->
+<view class="footer">
+	<view class="payment">{{total}}</view>
+	<view class="checkout" bindtap="toPay" class="checkout {{isdisabled ? 'noable' : ''}}" >提交订单</view>
+</view>

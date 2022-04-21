@@ -1,0 +1,12 @@
+<!-- 分类管理 -->
+<view class="category-container">
+	<view class="item" wx:for="{{categories}}" wx:key="">
+		<!-- <view class="title" >{{item.title}}</view> -->
+		<navigator class="title" url="../add/add?objectId={{item.objectId}}" open-type="navigate" hover-class="none">{{item.title}}</navigator>
+	</view>
+</view>
+<!-- 添加按钮 -->
+<view class="add-category" bindtap="add">
+	<image src="/images/add.png" class="icon" />
+	<view class="caption">新增分类</view>
+</view>

@@ -1,0 +1,149 @@
+.weui-navbar {
+	height: 80rpx;
+	border-bottom: none;
+	margin-top: 12rpx;
+	background-color: #fff;
+	font-size: 26rpx;
+	color: #282828;
+	display: flex;
+	align-items: center;
+}
+.weui-navbar__title {
+	display: inline-block;
+	font-size: 15px;
+	max-width: 8em;
+	width: auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	word-wrap: normal;
+}
+.weui-navbar__item.weui-bar__item_on {
+    border-bottom: 4rpx solid #F44225;
+    color: #F44225;
+}
+.weui-navbar__item.weui-bar__item_on {
+    color: #1aad19;
+}
+.weui-navbar__item {
+    border-top: none;
+    border-bottom: 2rpx solid #EFEFF4;
+    padding: 0;
+    height: 80rpx;
+    line-height: 80rpx;
+}
+.weui-navbar__item {
+    position: relative;
+    display: block;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    flex: 1;
+    text-align: center;
+    font-size: 0;
+}
+
+.order-container
+{
+	padding-top: 50rpx;
+}
+page {
+	font-size: 16px;
+	color: #333;
+}
+
+/*每一行数据*/
+.row {
+	background: white;
+	border-bottom: 15px;
+	padding: 0 15px;
+	margin-bottom: 10px;
+}
+
+/*商户信息*/
+.shop {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+}
+
+/*logo*/
+.logo {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+}
+
+/*名称与状态*/
+.summary {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	border-bottom: 1px solid #eee;
+	height: 44px;
+	align-items: center;
+	flex: 1;
+}
+
+/*名称*/
+.title {
+	margin-left: 10px;
+}
+
+/*状态*/
+.status {
+	font-size: 14px;
+	text-align: right;
+}
+
+/*商品信息*/
+.goods {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 14px;
+	height: 44px;
+	border-bottom: 1px solid #eee;
+}
+
+/*商品名称*/
+.goods .title {
+	padding-left: 44px;
+	color: #666;
+}
+
+/*商品小计*/
+.goods .total {
+	color: #000;
+	text-align: right;
+	font-weight: bold;
+}
+
+.goods .total:before {
+	content: '￥';
+}
+
+/*支付按钮*/
+.payment {
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.payment .button {
+	margin: 11px 0;
+	background: #4CAF50;
+	border-radius: 3px;
+	padding: 3px 12px;
+	color: #fff;
+	font-size: 14px;
+}
+
+/*加载提示*/
+/*上拉加载提示*/
+.loading-indicator {
+	text-align: center;
+	font-size: 12px;
+	margin: 10px 0;
+	line-height: 300%;
+}

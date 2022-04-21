@@ -1,0 +1,49 @@
+<form bindsubmit="add">
+	<view class="item group-item">
+		<view class="caption">联系人</view>
+		<view class="bd linkman">
+			<view class="input-container">
+				<input name="realname" value="{{address.name}}" placeholder="收货人姓名" />
+			</view>
+			<view class="input-container input-container-radio">
+				<radio-group name="gender" class="radio-group" bindchange="radioChange">
+					<label class="radio">
+						<radio value="1" checked="{{address.is_default == 1 || !address.is_default ? true : false}}" />先生
+					</label>
+					<label class="radio">
+						<radio value="0" checked="{{address.is_default == 0 ? true : false}}" />女士
+					</label>
+				</radio-group>
+			</view>
+		</view>
+	</view>
+	<view class="item">
+		<view class="caption">联系电话</view>
+		<view class="bd">
+			<input type="number" name="mobile" value="{{address.phone}}" placeholder="收货人电话" />
+		</view>
+	</view>
+	<view class="item group-item">
+		<view class="caption">收货地址</view>
+		<view class="bd">
+			<view class="input-container">
+				<input name="area" value="{{area.title || address.title}}" placeholder="小区/写字楼/学校等" bindfocus="selectAddress" />
+			</view>
+	      <view style="line-height:30rpx;color: #BDBDBD;">
+				{{area.address || address.address}}
+				</view>
+		</view>
+	</view>
+	<view class="item">
+		<view class="caption">单元门牌号</view>
+		<view class="bd">
+			<input name="detail" value="{{address.addr}}" placeholder="详细地址（如门牌号等）" />
+		</view>
+	</view>
+
+
+	<view class="buttons">
+		<!-- <button wx:if="{{isEdit}}" class="delete" bindtap="delete">删除</button> -->
+		<button form-type="submit" class="confirm">{{isEdit ? '修改' : '添加'}}</button>
+	</view>
+</form>

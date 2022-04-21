@@ -1,0 +1,109 @@
+page {
+    background: #fff;
+}
+
+.wrapper {
+    padding: 0 36rpx;
+}
+
+.withdrawal-num {
+    border-bottom: 2rpx solid #e7e7e7;
+    text-align: center;
+    padding-top: 50rpx;
+    padding-bottom: 40rpx;
+}
+
+.num-txt {
+    color: #6B6B6B;
+    font-size: 28rpx;
+    opacity: 0.8;
+    margin-bottom: 8rpx;
+}
+
+.num-info {
+    color: #333;
+    font-size: 80rpx;
+    line-height: 124rpx;
+    font-weight: bold;
+}
+
+.cash-process {
+    border-bottom: 2rpx solid #e7e7e7;
+    padding-top: 42rpx;
+    margin-bottom: 32rpx;
+}
+
+.cash-process .process-items {
+    border-left: 2rpx solid #e7e7e7;
+    position: relative;
+    width: 100%;
+    padding-left: 34rpx;
+    min-height: 155rpx;
+}
+
+.cash-process .process-items-last {
+    position: relative;
+    width: 100%;
+    padding-left: 34rpx;
+    margin-top: -5rpx;
+    margin-bottom: 40rpx;
+}
+
+.cash-title {
+    color: #999;
+    font-size: 28rpx;
+    font-weight: bold;
+    line-height: 40rpx;
+    margin-bottom: 10rpx;
+}
+
+.cash-desc {
+    color: #999;
+    font-size: 24rpx;
+    line-height: 34rpx;
+    word-break: break-all;
+}
+
+.icons-process-mark {
+    width: 26rpx;
+    height: 26rpx;
+    position: absolute;
+    top: 2rpx;
+    left: -11rpx;
+}
+
+.process-items .cash-title {
+    color: #00AA22;
+}
+
+.process-success .process-items {
+    border-left: 2rpx solid #17CC63;
+}
+
+.process-success .cash-title {
+    color: #00AA22;
+}
+
+.process-failed .process-items {
+    min-height: 190rpx;
+}
+
+.process-failed .process-items .cash-title {
+    color: #FF7700;
+}
+
+.opts-info {
+    color: #666;
+    font-size: 28rpx;
+    overflow: hidden;
+    line-height: 40rpx;
+    margin-bottom: 28rpx;
+}
+
+.opts-info .opts-label {
+    float: left;
+}
+
+.opts-info .opts-handle {
+    float: right;
+}

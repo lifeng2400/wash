@@ -1,0 +1,28 @@
+<scroll-view enableBackToTop bindscrolltolower="scrollGetList" class="view-list" scrollY="true">
+    <view class="contaniner {{countList.length>0?'':'contaniner_empty'}}" data-a="{{countList.length}}">
+        <view class="listContent" wx:if="{{countList.length}}">
+            <view bindtap="withdrawClick" class="listOne" data-id="{{item.ID}}" wx:for="{{countList}}" wx:key="{{index}}">
+                <view class="listOneLeft">
+                    <view class="getWay">{{item.uname}} 
+                    </view>
+                    <view class="getBalanceNum"><text>订单状态：</text>
+					<block wx:if="{{item.OState == 2}}">完成</block>
+					<block wx:elif="{{item.OState == -1}}">未支付</block>      
+                      </view>
+                </view>
+                <view class="listOneRight">
+                    <view class="{{item.OState==2?'moneyGetSub':''}}">
+                        {{item.OState==2?'成功获得':'预计获得'}} ：{{item.money}}
+                   </view>
+                    <view class="getTime">{{item.time}}</view>
+                </view>
+        
+            </view>
+        </view>
+        <view class="empty" wx:else>
+            <image class="emptyImg" src="https://jp.juancdn.com/wxMapp/vip/emptyImg.png"></image>
+            <view class="emptytips">暂无收支明细</view>
+        </view>
+    </view>
+</scroll-view>
+<include src="/components/toast/toast.wxml"></include>

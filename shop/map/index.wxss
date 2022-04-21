@@ -1,0 +1,126 @@
+
+.card{
+  margin-left:12rpx;
+  margin-right:12rpx;
+  margin-top: 12rpx;
+  margin-bottom: 20rpx;
+  background: white;
+  box-sizing: border-box;
+  border-radius: 6rpx;
+  box-shadow: 0 1rpx 6rpx rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+.card-title{
+  font-size: 30rpx;
+  font-weight: 600;
+  align-self: flex-start;
+}
+
+/* .card-full{
+  
+} */
+
+
+.store-list{
+  padding: 10rpx 12rpx 10rpx;
+  position: relative;
+}
+
+.store-title{
+  float: left;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-right: 12rpx;
+}
+
+.store-title .img {
+  width: 230rpx;
+  height: 230rpx;
+  border-radius: 12rpx;
+}
+
+
+.store-title text {
+  font-size: 36rpx;
+}
+
+.price{
+  padding-top: 20rpx;
+  position: relative;
+}
+
+.red-tip{
+  position: absolute;
+  right: 10rpx;
+  color:#ff3333;
+  
+}
+
+.price-text{
+  padding-left: 13rpx;
+}
+
+.activity{
+  padding-top: 10rpx;
+}
+
+.activity-content{
+  font-size: 25rpx;
+  color:#898989;
+
+}
+
+.button{
+  margin-top: 33rpx;
+}
+
+.adress {
+  padding-top: 24rpx;
+}
+
+.adress-text{
+  padding-left: 15rpx;
+  color:#666;
+  font-size: 22rpx;
+}
+
+.position-button{
+  position: absolute;
+  right: 32rpx;
+  top:230rpx;
+}
+
+
+
+.search{
+  height: 60rpx;
+  line-height: 60rpx;
+  padding:0 25rpx;
+  background: rgba(0, 0, 0, .5);
+  border-radius: 10rpx;
+  font-size: 24rpx;
+  color: white;
+  position: fixed;
+  top:40rpx;
+  left: 20rpx;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  z-index: 1000;
+}
+
+.address-image{
+  width: 24rpx;
+  height: 24rpx;
+}
+
+.search-city{
+  padding-left:8rpx;
+}
+
+.scrollPage {
+  height: 100vh;
+}

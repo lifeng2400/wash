@@ -1,0 +1,49 @@
+<template name="foodPage">
+  <view class="allFood" style="height: {{foodPageHeight}}rpx">
+    <view style="width:28%; height: {{foodPageHeight}}rpx">
+      <scroll-view class="orderPage-sideBar" bindscrolltolower="lower" scroll-y="true">
+        <block wx:for="{{ showmenu }}" wx:key="">
+          <view class="menuList">
+            <view class="menu {{index===selected?'selected':''}}" data-index="{{index}}" catchtap="turnMenu">{{item.typeName}}</view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+    <view style="width: 72%; height: {{foodPageHeight+320}}rpx;margin-bottom:230rpx;">
+      <scroll-view class="foodList" scroll-y="true">
+        <view class="title">{{showmenu[selected].typeName}}</view>
+        <block wx:for="{{ showmenu[selected].menuContent }}" wx:key="">
+          <view class="food">
+            <image class="img" src="{{item.pic}}" bindtap='showNotice'  data-content="{{item.content}}"></image>
+            <view class="food-info"  bindtap='showNotice'  data-content="{{item.content}}">
+              <view class="name">{{item.foodName}}</view>
+              <view class="sales">{{item.tag}} 
+              </view>
+              <view class="price">{{item.price}}  <text style="font-size: 25rpx;color: #acacac;">/ {{item.Gdw}}</text></view> 
+            </view>
+            <view class="food-numb">
+              <view class="remove" bindtap="removeFromTrolley" hidden="{{ item.numb == 0 }}" data-index="{{index}}">-</view>
+              <text class="text" hidden="{{item.numb == 0}}">{{ item.numb }}</text>
+              <view class="add" bindtap="addToTrolley" data-index="{{index}}">+</view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="footer {{cost>=seller.min_amount ? 'active':''}}">
+    <view class="howMuch">
+      <view class="imgCar" style="background:{{cost!=0?'#0099ff':'#E7E7E7'}};" bindtap='openCart'>
+        <image src="/images/trolley.png" style="width:60rpx;height:60rpx;"></image>
+      </view>
+      <!-- <view class="clearCar" bindtap='clearCarTap'>
+        <text>清空</text>
+      </view> -->
+      <view class="cost" hidden="{{cost==0}}">￥{{cost}}</view>
+      <view class="free"></view>
+    </view>
+
+    
+    <view class="pay" bindtap='gotocheck'>{{cost<seller.min_amount ? '满99起取货':'去结算'}}</view>
+  </view>
+</template>

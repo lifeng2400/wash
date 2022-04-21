@@ -1,0 +1,28 @@
+<!-- 菜品列表 -->
+<view class="food-container">
+	<!-- 菜品单品 -->
+	<view class="food-item" wx:for="{{foodObjects}}" wx:key="" bindtap="showDetail" data-index="{{index}}">
+		<!-- food list -->
+		<!-- 主图 -->
+		<view class="food-hd">
+			<image class="thumb" mode="aspectFill" src="{{item.thumb_url}}" />
+		</view>
+		<view class="food-bd">
+			<view class="main">
+				<view class="title">{{item.title}}</view>
+				<view class="priority">No.{{item.priority}}</view>
+			</view>
+			<view class="summary">{{item.summary}}</view>
+			<view class="price-stepper">
+				<view class="category">{{item.category.title}}</view>
+				<view class="price">{{item.price}}</view>
+			</view>
+		</view>
+	</view>
+	<!-- ./ food list -->
+</view>
+<!-- 添加按钮 -->
+<view class="add-food" bindtap="add">
+	<image src="/images/add.png" class="icon" />
+	<view class="caption">新增菜品</view>
+</view>

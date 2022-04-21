@@ -1,0 +1,660 @@
+
+page,.container {
+    background-color: #f4f4f8;
+}
+
+.vip-content .vip-part {
+    background: #fff;
+    padding: 32rpx 20rpx;
+    border-bottom: 20rpx solid #f4f4f8;
+}
+
+.vip-content .vip-user {
+    padding: 0 16rpx;
+    overflow: hidden;
+    margin-bottom: 24rpx;
+}
+
+.vip-content .person-pic {
+    float: left;
+    width: 80rpx;
+    height: 80rpx;
+    margin-right: 20rpx;
+}
+
+.person-pic .pic {
+    border-radius: 50%;
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.vip-content .texts {
+    color: #333;
+    float: left;
+    font-size: 32rpx;
+}
+
+.texts-h1 {
+    display: block;
+    margin-top: 2rpx;
+    font-weight: bold;
+}
+
+.texts-desc {
+    display: block;
+    font-size: 24rpx;
+    color: #999;
+}
+
+.vip-card {
+    width: 710rpx;
+    height: 380rpx;
+    padding: 0 16rpx;
+    margin-bottom: 16rpx;
+    position: relative;
+}
+
+.vip-price {
+    padding-top: 68rpx;
+    padding-left: 40rpx;
+    margin-bottom: 68rpx;
+}
+
+.vip-price .num {
+    display: block;
+    color: #FFEBC2;
+    font-size: 26rpx;
+    line-height: 36rpx;
+}
+
+.vip-price .price-info {
+    display: block;
+    color: #FFEBC2;
+    font-size: 60rpx;
+    line-height: 84rpx;
+    font-weight: bold;
+}
+
+.account-info {
+    display: flex;
+}
+
+.account-info .items {
+    flex: 1;
+    color: #FFEBC2;
+    border-right: 2rpx solid #FFDD99;
+    text-align: center;
+}
+
+.account-info .items.last {
+    border-right: none;
+}
+
+.account-info .account-num {
+    font-size: 28rpx;
+    font-weight: bold;
+    line-height: 40rpx;
+}
+
+.account-info .account-txt {
+    font-size: 22rpx;
+    line-height: 32rpx;
+}
+
+.icons-vip-mark {
+    width: 98rpx;
+    height: 98rpx;
+    position: absolute;
+    top: 78rpx;
+    right: 58rpx;
+}
+
+.share-result {
+    display: flex;
+}
+
+.share-result .items {
+    border-right: 2rpx solid #ebebeb;
+    flex: 1;
+    text-align: center;
+}
+
+.share-result .items.last {
+    border-right: none;
+}
+
+.share-result .share-desc {
+    color: #666;
+    font-size: 24rpx;
+    line-height: 32rpx;
+    margin-bottom: 4rpx;
+}
+
+.share-result .share-num {
+    color: #333;
+    font-size: 40rpx;
+    line-height: 56rpx;
+    font-weight: bold;
+}
+
+.vip-part-time {
+    background: #fff;
+    padding: 24rpx 32rpx;
+    overflow: hidden;
+    border-bottom: 20rpx solid #f4f4f8;
+}
+
+.vip-part-time .time-h1 {
+    color: #333;
+    font-weight: bold;
+    font-size: 30rpx;
+    line-height: 42rpx;
+    margin-bottom: 24rpx;
+}
+
+.vip-part-time .invite-fans {
+    display: inline-block;
+    width: 332rpx;
+    height: 160rpx;
+    float: left;
+    padding-top: 40rpx;
+    padding-left: 30rpx;
+    position: relative;
+    margin-right: 22rpx;
+}
+
+.vip-part-time .buy-goods {
+    display: inline-block;
+    width: 332rpx;
+    height: 160rpx;
+    float: left;
+    padding-top: 40rpx;
+    padding-left: 30rpx;
+    position: relative;
+}
+
+.vip-part-time .invite-txt {
+    color: #ff464e;
+    font-size: 30rpx;
+    line-height: 36rpx;
+    margin-bottom: 12rpx;
+    font-weight: bold;
+}
+
+.vip-part-time .invite-now {
+    color: #ff464e;
+    font-size: 26rpx;
+    line-height: 32rpx;
+}
+
+.vip-part-time .icons-invited-link {
+    width: 24rpx;
+    height: 24rpx;
+    margin-left: 4rpx;
+    display: inline-block;
+    vertical-align: -1rpx;
+}
+
+.vip-opts {
+    width: 750rpx;
+    height: 236rpx;
+}
+
+.vip-part-opts {
+    margin-bottom: 20rpx;
+}
+
+.texts .icons-invited-link {
+    width: 24rpx;
+    height: 24rpx;
+    margin-left: 4rpx;
+    display: inline-block;
+    vertical-align: -1rpx;
+}
+
+.notice {
+    background: #fff4e5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 15px;
+    height: 32px;
+}
+
+.notice .laba {
+    width: 24px;
+    height: 24px;
+}
+
+.notice .txt {
+    flex: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-left: 10px;
+    font-size: 12px;
+    color: #ff973a;
+    white-space: nowrap;
+    word-wrap: none;
+    height: 32px;
+    line-height: 32px;
+}
+
+.notice .angle {
+    color: #ff973a;
+}
+
+.rule-dialog {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+
+.dialog-ceng {
+    background: #000;
+    opacity: .8;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.dialog-content {
+    background: #fff;
+    border-radius: 15rpx;
+    width: 632rpx;
+    position: fixed;
+    top: 150rpx;
+    left: 50%;
+    margin-left: -316rpx;
+    z-index: 100;
+}
+
+.dialog-title {
+    padding-top: 35rpx;
+    margin-bottom: 15rpx;
+}
+
+.new-user05 {
+    width: 632rpx;
+    height: 44rpx;
+}
+
+.rule-content {
+    color: #585858;
+    font-size: 24rpx;
+    text-align: justify;
+    padding-left: 20rpx;
+    padding-right: 20rpx;
+    margin-bottom: 20rpx;
+    height: 550rpx;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+
+.rule-content .items {
+    margin-bottom: 40rpx;
+}
+
+.rule-content .rule-txt {
+    line-height: 35rpx;
+    display: block;
+}
+
+.rule-content .rule-title {
+    color: #1b1b1b;
+    font-size: 28rpx;
+}
+
+.rule-content .txt-red {
+    color: #ff2424;
+}
+
+.rule-btn {
+    text-align: center;
+    margin-bottom: 20rpx;
+}
+
+.rule-invited-btn {
+    display: inline-block;
+    width: 368rpx;
+    height: 116rpx;
+}
+
+.icons-close-dialog {
+    position: absolute;
+    top: -78rpx;
+    right: 0;
+    width: 56rpx;
+    height: 85rpx;
+}
+
+page {
+    background: #fff;
+}
+
+.invite-content {
+    padding: 0;
+    margin-top: -1rpx;
+}
+
+.icons-invited-pay {
+    width: 750rpx;
+    height: 244rpx;
+}
+
+.invite-content .invite-part {
+    background: #fff;
+    border-bottom: 20rpx solid #f4f4f8;
+    overflow: hidden;
+}
+
+.invite-part.no-bd {
+    border-bottom: 20rpx solid #fff;
+}
+
+.invite-kinds {
+    padding-top: 60rpx;
+    text-align: center;
+}
+
+.icons-invite-kinds.unvip {
+    display: inline-block;
+    width: 624rpx;
+    height: 304rpx;
+    margin-bottom: 52rpx;
+}
+
+.icons-invite-kinds.isvip {
+    display: inline-block;
+    width: 624rpx;
+    height: 320rpx;
+    margin-bottom: 52rpx;
+}
+
+.icons-invite-kinds.overvip {
+    display: inline-block;
+    width: 624rpx;
+    height: 318rpx;
+    margin-bottom: 52rpx;
+}
+
+.icons-part-line {
+    width: 702rpx;
+    height: 24rpx;
+    margin-bottom: 68rpx;
+}
+
+.invite-content .invite-title {
+    text-align: center;
+    margin-bottom: 60rpx;
+    padding-top: 40rpx;
+}
+
+.icons-invite-title.unvip {
+    display: inline-block;
+    width: 492rpx;
+    height: 34rpx;
+}
+
+.icons-invite-title.isvip {
+    display: inline-block;
+    width: 642rpx;
+    height: 34rpx;
+}
+
+.icons-invite-title.overvip {
+    display: inline-block;
+    width: 608rpx;
+    height: 34rpx;
+}
+
+.invite-content .invite-peo {
+    color: #333;
+    font-size: 32rpx;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 44rpx;
+}
+
+.invite-peo .txt-red {
+    color: #E6361C;
+    font-size: 48rpx;
+    vertical-align: -2rpx;
+}
+
+.invite-button {
+    text-align: center;
+}
+
+.invite-button .invite-now {
+    background: #E6361C;
+    border-radius: 48rpx;
+    box-shadow: 0 12rpx 12rpx 0 rgba(247,68,53,0.16);
+    color: #fff;
+    display: inline-block;
+    width: 580rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 36rpx;
+    margin-bottom: 64rpx;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.invite-content .share-person {
+    text-align: center;
+    padding: 52rpx 0 20rpx;
+}
+
+.icons-share-txt {
+    display: inline-block;
+    width: 432rpx;
+    height: 72rpx;
+}
+
+.invite-part-rule {
+    background: rgba(255,255,255,.2);
+    border-radius: 12rpx;
+    margin-bottom: 60rpx;
+    overflow: hidden;
+}
+
+.rule-title {
+    padding: 46rpx 0;
+    text-align: center;
+}
+
+.icons-rule-title {
+    width: 242rpx;
+    height: 34rpx;
+}
+
+.rule-info {
+    padding: 0 24rpx;
+}
+
+.rule-info .items {
+    clear: both;
+    zoom: 1;
+    overflow: hidden;
+    margin-bottom: 24rpx;
+}
+
+.rule-info .rule-num {
+    background: #FFE0BD;
+    color: #A62713;
+    float: left;
+    border-radius: 50%;
+    width: 32rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    text-align: center;
+    font-size: 24rpx;
+    margin-top: 4rpx;
+    margin-right: 16rpx;
+}
+
+.rule-info .rule-txt {
+    float: left;
+    width: 600rpx;
+    color: #FFFDFA;
+    text-align: justify;
+    font-size: 28rpx;
+    line-height: 40rpx;
+}
+
+.goods-bottom {
+    overflow: hidden;
+    clear: both;
+    zoom: 1;
+}
+
+.my-invited {
+    width: 100%;
+}
+
+.my-invited .invited-info {
+    background: #F04126;
+    overflow: hidden;
+    clear: both;
+    zoom: 1;
+    padding: 13rpx 32rpx;
+}
+
+.my-invited .invite-code {
+    color: #fff;
+    float: left;
+    font-size: 32rpx;
+    margin-right: 20rpx;
+}
+
+.my-invited .copy-btn {
+    border: 1rpx solid #fff;
+    background: #F04126;
+    border-radius: 16rpx;
+    color: #fff;
+    float: left;
+    font-size: 20rpx;
+    width: 70rpx;
+    height: 32rpx;
+    line-height: 32rpx;
+    text-align: center;
+    margin-top: 7rpx;
+}
+
+.my-invited .vip-rule {
+    color: #FFEFD6;
+    font-size: 24rpx;
+    float: right;
+    margin-top: 5rpx;
+}
+
+.invite-vip01 {
+    width: 100%;
+    position: relative;
+}
+
+.invite-vip01-pic {
+    display: block;
+    width: 750rpx;
+    height: 444rpx;
+}
+
+.modal-btn {
+    width: 120rpx;
+    height: 120rpx;
+    position: absolute;
+    bottom: 158rpx;
+    left: 585rpx;
+}
+
+.invite-vip02 {
+    width: 100%;
+    text-align: center;
+    margin-top: 48rpx;
+    margin-bottom: 32rpx;
+}
+
+.invite-vip02-pic {
+    display: block;
+    margin: 0 auto;
+    width: 270rpx;
+    height: 34rpx;
+}
+
+.coupons-info {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 32rpx;
+}
+
+.invite-vip03 {
+    display: block;
+    margin: 0 auto;
+    width: 654rpx;
+    height: 160rpx;
+}
+
+.make-money-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+
+.make-money-modal .ceng {
+    background: rgba(0,0,0,.45);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.make-money-modal .modal-content {
+    position: absolute;
+    top: 100rpx;
+    left: 50%;
+    margin-left: -315rpx;
+    width: 630rpx;
+    z-index: 101;
+}
+
+.invite-vip05 {
+    width: 100%;
+    margin-bottom: 30rpx;
+}
+
+.invite-vip05-pic {
+    display: block;
+    width: 630rpx;
+    height: 704rpx;
+}
+
+.invite-vip06 {
+    text-align: center;
+}
+
+.invite-vip06-pic {
+    display: block;
+    margin: 0 auto;
+    width: 80rpx;
+    height: 80rpx;
+}
+
+.rule-links {
+    color: #d90202;
+    font-size: 24rpx;
+    text-align: center;
+    position: absolute;
+    top: 45rpx;
+    right: 28rpx;
+    width: 120rpx;
+    text-indent: 5rpx;
+}

@@ -1,0 +1,23 @@
+<view class="main-wrapper">
+
+  <form bindsubmit='phoneNumberBind'>
+    <view class='info-box'>
+      <text class='lable'>手机号</text>
+      <input type='text' name="tel" placeholder='请填写你手机号' placeholder-class='tip' value='{{tel}}' bindinput='telInput' wx:if='{{!userInfo.phone_number}}'></input>
+      <text wx:else>{{userInfo.phone_number}}</text>
+      <view wx:if='{{!userInfo.phone_number}}' class='phone-bind'>
+        <button class='phone-auth' open-type='getPhoneNumber' bindgetphonenumber="getPhoneNumber">一键授权</button>
+      </view>
+    </view>
+    <view class='info-box' wx:if='{{!userInfo.phone_number}}'>
+      <text class='lable'>验证码</text>
+      <input type='text' name="code" placeholder='请输入验证码' placeholder-class='tip'></input>
+      <view class='phone-bind' wx:if='{{!showBindAgain}}' bindtap='getCode'>获取验证码</view>
+      <view class='bind-again' wx:else>重新发送（{{clock}}）</view>
+    </view>
+    <view class='auth-wait' wx:if='{{userInfo.phone_number}}'>
+      <text>已绑定</text>
+    </view>
+    <button class="submitBtn" form-type='submit' wx:else>提交</button>
+  </form>
+</view>

@@ -21,12 +21,12 @@
 
 #### 使用说明
 
-1. ![首页](other11.jpg) 
-2.  ![店铺，地图展示](other44.jpg)
-3.  ![订单 可以自送 也可以物流](other33.jpg)
-4.![页面详细](other%E9%A1%B5%E9%9D%A2%E8%AF%A6%E7%BB%86.jpg)
-5.![分销海报](other%E5%88%86%E9%94%80%E6%B5%B7%E6%8A%A5.png)
-6![输入图片说明](other%E5%88%86%E9%94%80%E4%B8%AD%E5%BF%83.png)
+1. ![首页](http://wwx.50cms.com/up/other11.jpg) 
+2.  ![店铺，地图展示](http://wwx.50cms.com/up/other44.jpg)
+3.  ![订单 可以自送 也可以物流](http://wwx.50cms.com/up/other33.jpg)
+4.![页面详细](http://wwx.50cms.com/up/other%E9%A1%B5%E9%9D%A2%E8%AF%A6%E7%BB%86.jpg)
+5.![分销海报](http://wwx.50cms.com/up/other%E5%88%86%E9%94%80%E6%B5%B7%E6%8A%A5.png)
+6![输入图片说明](http://wwx.50cms.com/up/other%E5%88%86%E9%94%80%E4%B8%AD%E5%BF%83.png)
 
 
 

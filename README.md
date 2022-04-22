@@ -10,7 +10,7 @@
 #### 软件架构
 微信原生小程序，已经在使用
 
-![体验二维码](other%E4%BD%93%E9%AA%8C%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg)
+![体验二维码](http://wwx.50cms.com/up/other%E4%BD%93%E9%AA%8C%E4%BA%8C%E7%BB%B4%E7%A0%81.jpg)
 
 
 #### 安装教程

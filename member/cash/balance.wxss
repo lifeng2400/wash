@@ -1,0 +1,429 @@
+page {
+    background: #fff;
+}
+
+.withdraw-details {
+    border-top: 20rpx solid #efeff4;
+    padding: 40rpx 28rpx;
+}
+
+.withdraw-details .tel-num {
+    color: #666;
+    font-size: 28rpx;
+    line-height: 40rpx;
+}
+
+.code-info {
+    border-bottom: 2rpx solid #e7e7e7;
+    overflow: hidden;
+    padding: 30rpx 0 20rpx;
+    margin-bottom: 48rpx;
+}
+
+.code-info .doll-mark {
+    color: #333;
+    font-size: 32rpx;
+    float: left;
+    margin-right: 8rpx;
+    padding-top: 10rpx;
+}
+
+.code-info .code-input {
+    color: #333;
+    float: left;
+    width: 500rpx;
+    font-size: 30rpx;
+}
+
+.phcolor {
+    color: #bbb;
+}
+
+.apply-sub {
+    background: #dbdbdb;
+    border-radius: 8rpx;
+    color: #fff;
+    font-size: 36rpx;
+    line-height: 88rpx;
+    text-align: center;
+    margin-bottom: 24rpx;
+}
+
+.apply-sub::after {
+    border: none;
+}
+
+.apply-sub.enabled {
+    background: #ff464e;
+}
+
+.withdraw-desc {
+    color: #999;
+    font-size: 24rpx;
+    line-height: 48rpx;
+}
+
+.balance-box {
+    background: #ff464e;
+    color: #fff;
+    font-size: 28rpx;
+    width: 750rpx;
+    height: 282rpx;
+    padding: 20rpx 24rpx;
+}
+
+.balance-title {
+    /* text-align: right; */
+    margin-bottom: 20rpx;
+}
+
+.balance-account {
+    text-align: center;
+    margin-bottom: 8rpx;
+}
+
+.balance-num {
+    text-align: center;
+    font-size: 64rpx;
+    line-height: 90rpx;
+}
+
+.withdraw-way {
+    border-top: 20rpx solid #efeff4;
+    padding: 0 28rpx;
+}
+
+.withdraw-way .ways {
+    color: #666;
+    font-size: 28rpx;
+    overflow: hidden;
+    padding: 28rpx 0;
+}
+
+.gray-bd {
+    border-bottom: 2rpx solid #e7e7e7;
+}
+
+.icons-wx-logo {
+    float: left;
+    width: 48rpx;
+    height: 48rpx;
+    margin-right: 28rpx;
+}
+
+.wx-pay-txt {
+    color: #333;
+}
+
+.txt-gray {
+    color: #3f3f3f;
+}
+
+.icons-check-mark {
+    float: right;
+    width: 48rpx;
+    height: 48rpx;
+}
+
+.withdraw-details-next {
+    border-top: 20rpx solid #efeff4;
+    padding: 40rpx 28rpx;
+}
+
+.withdraw-details-next .tel-num {
+    color: #666;
+    font-size: 28rpx;
+    line-height: 40rpx;
+}
+
+.withdraw-details-next .code-info {
+    border-bottom: 2rpx solid #e7e7e7;
+    overflow: hidden;
+    padding: 30rpx 0 20rpx;
+    margin-bottom: 48rpx;
+}
+
+.withdraw-details-next .code-info .code-input {
+    color: #333;
+    float: left;
+    width: 450rpx;
+    font-size: 30rpx;
+}
+
+.phcolor {
+    color: #bbb;
+}
+
+.withdraw-details-next .code-info .code-txts {
+    background: none;
+    color: #bbb;
+    font-size: 32rpx;
+    float: right;
+    line-height: 60rpx;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.withdraw-details-next .code-info .code-txts::after {
+    border: none;
+}
+
+.withdraw-details-next .code-info .code-txts.enabled {
+    color: #ff464e;
+}
+
+.apply-sub {
+    background: #dbdbdb;
+    border-radius: 8rpx;
+    color: #fff;
+    font-size: 36rpx;
+    line-height: 88rpx;
+    text-align: center;
+}
+
+.apply-sub::after {
+    border: none;
+}
+
+.apply-sub.enabled {
+    background: #ff464e;
+}
+
+.icons-invited-link {
+    width: 24rpx;
+    height: 24rpx;
+    margin-left: 4rpx;
+    display: inline-block;
+    vertical-align: -1rpx;
+}
+
+.balance-tips {
+    color: #fff;
+    font-size: 24rpx;
+    line-height: 32rpx;
+    text-align: center;
+}
+
+.balance-mark {
+    display: inline-block;
+    width: 24rpx;
+    height: 24rpx;
+    margin-left: 6rpx;
+    vertical-align: -3rpx;
+}
+
+.tips-dialog {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+
+.dialog-ceng {
+    background: #000;
+    opacity: .8;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.dialog-content {
+    background: #FFF;
+    border-radius: 8rpx;
+    width: 600rpx;
+    position: fixed;
+    top: 285rpx;
+    left: 50%;
+    margin-left: -300rpx;
+    z-index: 100;
+}
+
+.close-dialog {
+    position: absolute;
+    top: 20rpx;
+    right: 20rpx;
+}
+
+.close-dialog .icons-close {
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.tips-dialog-h1 {
+    color: #333;
+    font-size: 36rpx;
+    font-weight: bold;
+    padding-top: 48rpx;
+    margin-bottom: 32rpx;
+    text-align: center;
+}
+
+.tips-content {
+    padding: 0 68rpx 48rpx 68rpx;
+}
+
+.tips-content .tips-item {
+    margin-bottom: 24rpx;
+}
+
+.tips-content .txt-info {
+    color: #333;
+    font-size: 32rpx;
+    line-height: 44rpx;
+}
+
+.tips-content .activity-link {
+    color: #ff464e;
+    font-size: 28rpx;
+    text-align: center;
+    margin-top: 40rpx;
+}
+
+.activitied-dialog {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 99;
+}
+
+.dialog-ceng2 {
+    background: #000;
+    opacity: .8;
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.dialog-content2 {
+    background: #FF4F4C;
+    border-radius: 8rpx;
+    width: 622rpx;
+    position: fixed;
+    top: 60rpx;
+    left: 50%;
+    margin-left: -311rpx;
+    z-index: 100;
+}
+
+.close-dialog2 {
+    position: absolute;
+    top: 20rpx;
+    right: 40rpx;
+}
+
+.close-dialog2 .icons-close {
+    width: 36rpx;
+    height: 36rpx;
+}
+
+.dialog-title {
+    color: #fff;
+    font-size: 36rpx;
+    padding-top: 48rpx;
+    margin-bottom: 28rpx;
+    text-align: center;
+}
+
+.activitiy-rule {
+    margin: 0 44rpx;
+}
+
+.activitiy-rule .items {
+    color: #fff;
+    margin-bottom: 25rpx;
+    text-align: justify;
+}
+
+.activitiy-rule .rule-info {
+    font-size: 28rpx;
+    line-height: 44rpx;
+    word-break: break-all;
+}
+
+.rule-info-h1 {
+    font-size: 28rpx;
+    font-weight: bold;
+    line-height: 44rpx;
+}
+
+.invite-content {
+    padding: 0 24rpx;
+}
+
+.icons-invited-pay {
+    width: 750rpx;
+    height: 244rpx;
+}
+
+.invite-content .invite-part {
+    background: #fff;
+    border-radius: 12rpx;
+    margin-bottom: 40rpx;
+    overflow: hidden;
+}
+
+.invite-kinds {
+    padding-top: 60rpx;
+    text-align: center;
+}
+
+.icons-invite-kinds {
+    display: inline-block;
+    width: 624rpx;
+    height: 304rpx;
+    margin-bottom: 52rpx;
+}
+
+.icons-part-line {
+    width: 702rpx;
+    height: 24rpx;
+    margin-bottom: 68rpx;
+}
+
+.invite-content .invite-title {
+    text-align: center;
+    margin-bottom: 60rpx;
+}
+
+.icons-invite-title {
+    display: inline-block;
+    width: 492rpx;
+    height: 34rpx;
+}
+
+.invite-content .invite-peo {
+    color: #333;
+    font-size: 32rpx;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 44rpx;
+}
+
+.invite-peo .txt-red {
+    color: #E6361C;
+    font-size: 48rpx;
+    vertical-align: -2rpx;
+}
+
+.invite-button {
+    text-align: center;
+}
+
+.invite-button .invite-now {
+    background: #E6361C;
+    border-radius: 48rpx;
+    box-shadow: 0 12rpx 12rpx 0 rgba(247,68,53,0.16);
+    color: #fff;
+    display: inline-block;
+    width: 580rpx;
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 36rpx;
+    margin-bottom: 64rpx;
+}

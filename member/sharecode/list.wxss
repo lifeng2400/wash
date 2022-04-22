@@ -1,0 +1,143 @@
+
+.category-container {
+	padding-bottom: 44px;
+}
+
+/*每行*/
+.item {
+	align-items: center;
+	border-bottom: 1px solid #eee;
+	background: white;
+	margin-left: 0;
+}
+
+.add-category {
+	border-top: 1px solid #eee;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: white;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 12px 0;
+}
+
+.add-category .icon {
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+
+.add-category .caption {
+	font-size: 14px;
+	color: #4CAF50;
+	font-weight: bold;
+	margin-left: 5px;
+}
+
+
+/*地址列表*/
+.listview {
+	padding-bottom: 44px;
+}
+
+/*每一项*/
+.item {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px 10px;
+	border-bottom: 1px solid #ddd;
+	background: white;
+	margin-left: 0;
+	line-height: initial;
+}
+
+
+
+/*主体内容*/
+.item .bd {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+	font-size: 30rpx;
+}
+
+/*收件人信息*/
+.item .bd .receiver {
+	color: black;
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	margin: 10px 0;
+	margin-left: 10px;
+}
+
+/*姓氏*/
+.item .bd .receiver .firstname {
+	font-size: 16px;
+	font-weight: bold;
+}
+
+/*性别*/
+.item .bd .receiver .gender {
+	font-size: 12px;
+	margin: 0 10px;
+}
+
+/*手机号码*/
+.item .title {
+	font-size: 12px;
+}
+
+/*收件地址*/
+.item .time {
+	color: #999;
+	font-size: 14px;
+	margin: 5px 0;
+	margin-left: 10px;
+}
+
+/*编辑图标*/
+.item .ft {
+	width: 30px;
+	height: 30px;
+	margin: 10px;
+}
+
+/*.地址列表*/
+
+/*底部添加地址*/
+.add-address {
+	border-top: 1px solid #eee;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	background: white;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	padding: 12px 0;
+}
+
+.add-address .icon {
+	width: 20px;
+	height: 20px;
+	margin-right: 5px;
+}
+
+.add-address .caption {
+	font-size: 14px;
+	color: #4CAF50;
+	font-weight: bold;
+	margin-left: 5px;
+}
+/*.底部添加地址*/
+
+

@@ -1,0 +1,191 @@
+page {
+    background-color: #efeff4;
+    height: 100%;
+}
+
+::-webkit-scrollbar {
+    background-color: transparent;
+    width: 1px;
+    height: 1px;
+}
+
+.contaniner {
+    width: 100%;
+    height: 100%;
+}
+
+.view-list {
+    width: 100%;
+    height: 100%;
+}
+
+.contaniner_empty {
+    overflow: hidden;
+}
+
+.head {
+    width: 100%;
+    height: auto;
+    background: #ff464e;
+    position: relative;
+    color: #fff;
+    box-sizing: border-box;
+    padding: 48rpx 0;
+    margin-bottom: 22rpx;
+}
+
+.haedTitle {
+    width: 100%;
+    height: 40rpx;
+    line-height: 40rpx;
+    text-align: center;
+    font-size: 28rpx;
+    color: #fff;
+}
+
+.countMoney {
+    width: 100%;
+    height: 90rpx;
+    line-height: 90rpx;
+    text-align: center;
+    font-size: 64rpx;
+    color: #fff;
+    margin-top: 8rpx;
+    font-weight: bold;
+}
+
+.withdrawButton {
+    width: 240rpx;
+    height: 72rpx;
+    line-height: 72rpx;
+    border: 1rpx solid rgba(255,255,255,0.75);
+    border-radius: 4rpx;
+    margin: 48rpx auto 0;
+    text-align: center;
+    font-size: 32rpx;
+    color: #fff;
+}
+
+.listContent {
+    width: 100%;
+    height: auto;
+    overflow-y: auto;
+    background-color: #fff;
+}
+
+.listCountHead {
+    width: 100%;
+    height: 88rpx;
+    line-height: 88rpx;
+    font-size: 28rpx;
+    color: #333;
+    text-align: center;
+    background-color: #fff;
+}
+
+.listOne {
+    width: 100%;
+    min-height: 136rpx;
+    height: auto;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 28rpx;
+    font-size: 28rpx;
+    color: #333;
+    border-bottom: 1rpx solid #ebebeb;
+}
+
+.listOne:last-child {
+    border-bottom: none;
+}
+
+.listOneLeft {
+    width: 56%;
+    height: 100%;
+    float: left;
+    box-sizing: border-box;
+    text-align: left;
+}
+
+.getWay {
+    width: 100%;
+    min-height: 36rpx;
+    line-height: 36rpx;
+    height: auto;
+    overflow-y: auto;
+    font-size: 26rpx;
+    color: #323232;
+}
+
+.getTime {
+    width: 100%;
+    font-size: 26rpx;
+    color: #999;
+    margin-top: 20rpx;
+}
+
+.moneyGetAdd {
+    font-size: 26rpx;
+    color: #ff464e;
+    font-weight: bold;
+}
+
+.moneyGetSub {
+    font-size: 26rpx;
+    color: #57C43C;
+    font-weight: bold;
+}
+
+.listOneRight {
+    width: 40%;
+    height: 100%;
+    box-sizing: border-box;
+    float: left;
+    text-align: right;
+    overflow: hidden;
+    color: #9E9E9E;
+}
+
+.empty {
+    width: 100%;
+    height: 75%;
+    background-color: #fff;
+    padding-top: 84rpx;
+}
+
+.emptyImg {
+    width: 280rpx;
+    height: 280rpx;
+    display: block;
+    margin: 0px auto;
+}
+
+.emptytips {
+    width: 100%;
+    height: 44rpx;
+    line-height: 44rpx;
+    text-align: center;
+    font-size: 32rpx;
+    color: #333;
+    margin: 24rpx auto;
+}
+
+.angle {
+    color: #999;
+    display: inline-block;
+    transform: rotate(45deg);
+    height: 8px;
+    width: 8px;
+    border-width: 2px 2px 0 0;
+    border-style: solid;
+    position: relative;
+    margin-left: 0.3em;
+    float: right;
+    margin-top: 35rpx;
+}
+
+.getBalanceNum {
+    font-size: 24rpx;
+    color: #999;
+    margin-top: 10rpx;
+}

@@ -1,0 +1,73 @@
+/**
+ *
+ * 配套视频教程请移步微信->小程序->灵动云课堂
+ * 关注订阅号【huangxiujie85】，第一时间收到教程推送
+ *
+ * @link http://blog.it577.net
+ * @author 黄秀杰
+ */
+
+/*user info*/
+.userinfo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 180rpx;
+  background: white;
+}
+
+.userinfo-avatar {
+  width: 128rpx;
+  height: 128rpx;
+  margin: 20rpx;
+  border-radius: 50%;
+}
+
+.userinfo-nickname {
+  color: #333;
+}
+
+
+/*每行*/
+.item {
+	align-items: center;
+	border-bottom: 1px solid #eee;
+	background: white;
+	margin-left: 0;
+}
+
+/*左侧部分*/
+.item .title {
+	flex: 1;
+}
+
+/*右侧部分*/
+.item .subtitle {
+	flex: 3;
+	display: flex;
+	flex-direction: row;
+}
+
+/*-号分隔符*/
+.divide {
+	margin: auto 10px;
+}
+
+/*文本域*/
+.item .subtitle textarea {
+	background: #fdfdfd;
+	border: 1px solid #e2e2e2;
+	border-radius: 3px;
+	padding: 10px;
+	font-size: 14px;
+	min-height: 120px;
+	width: 90%;
+	box-sizing: border-box;
+	margin: 10px;
+	margin-left: 0;
+}
+
+/*更新按钮*/
+.update-button {
+	margin: 20px 10px;
+}

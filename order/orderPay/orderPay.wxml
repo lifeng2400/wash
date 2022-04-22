@@ -1,0 +1,42 @@
+<!--pages/orderPay/orderPay.wxml-->
+<view class="weui-toptips weui-toptips_warn" >技术开发 联系：13378719129</view>
+<view class='list'>
+  <view class='listItem b_B'>
+    <label>订单编号</label>
+    <text>{{ddInfo.OOrderNumber}}</text>
+  </view>
+  <view class='listItem'>
+    <label>订单金额</label>
+    <text class='cred'>￥{{ddInfo.OLastPrice}}</text>
+  </view>
+</view>
+
+<view class='payment'>
+  <view class='head'>支付方式</view>
+  <radio-group class="radio-group" bindchange="radioChange">
+    <label class="radio">
+      <view class='item-image'><image src='/images/wxp.png' mode='widthFix'></image></view>
+      <view class='item-h2'>微信支付</view>
+      <view class='item-h6'>推荐使用微信支付</view>
+      <view class='item-radio'><radio value="1" checked="true"/></view>
+    </label>
+
+  <label class="radio">
+      <view class='item-image'><image src='/images/yep.png' mode='widthFix'></image></view>
+      <view class='item-h2'>余额支付</view>
+      <view class='item-h6'>你的余额{{yuer}}</view>
+      <view class='item-radio'><radio value="2" checked=""/></view>
+    </label>
+
+  </radio-group>
+
+</view>
+
+
+<view class='wechatBtn'>
+   <!-- <text class="payL">￥{{ddInfo.OLastPrice}}</text> -->
+  <view class='payR'>
+    <view class='button' hover-class='active' bindtap='savepay1'  wx:if='{{ ddInfo.reserveStatus!=1}}'>立即支付</view>
+    <view class='button' hover-class='active' bindtap=''  wx:if='{{ ddInfo.reserveStatus==1}}'>已经支付</view>
+  </view>
+</view>

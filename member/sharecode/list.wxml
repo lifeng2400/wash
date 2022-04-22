@@ -1,0 +1,20 @@
+<!-- 分类管理 -->
+<view class="holder" wx:if="{{!categories}}">
+	<image src="/images/close.png" />
+	<view>您还没有发展任何会员</view>
+	<view>点击按钮分享海报</view>
+
+</view>
+
+<view class="category-container" wx:else>
+	<view class="item" wx:for="{{categories}}" wx:key="">
+	
+		<view class="title" >
+		<text  class="bd">{{item.name}}</text>
+	 <text class="bd"> [{{item.state}}]</text></view> 
+
+
+	 <view class="time" >{{item.addtime}}</view> 
+	</view>
+</view>
+<!-- 添加按钮 -->

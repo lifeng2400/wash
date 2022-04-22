@@ -1,0 +1,58 @@
+<view class="wrapper">
+    <view class="withdrawal-num">
+        <view class="num-txt">提现金额</view>
+        <view class="num-info">{{cash_money}}</view>
+    </view>
+    <view class="cash-process" wx:if="{{cash_status==1}}">
+        <view class="process-items">
+            <view class="icons-process-mark" style="background: url(\"https://jp.juancdn.com/wxMapp/cash/icons-process-wait.png\") no-repeat; background-size:100%"></view>
+            <view class="cash-title">等待审核</view>
+            <view class="cash-desc">{{add_time}}</view>
+            <view class="cash-desc">卷皮工作人员将在1个工作日内为你审核</view>
+        </view>
+        <view class="process-items-last">
+            <view class="icons-process-mark" style="background: url(\"https://jp.juancdn.com/wxMapp/cash/icons-process-default.png\") no-repeat; background-size:100%"></view>
+            <view class="cash-title">提现即将到账</view>
+            <view class="cash-desc">审核通过后将在3-5个工作日内到账，请在微信-钱包-我的零钱查看余额</view>
+        </view>
+    </view>
+    <view class="cash-process process-success" wx:if="{{cash_status==2}}">
+        <view class="process-items">
+            <view class="icons-process-mark" style="background: url(\"https://jp.juancdn.com/wxMapp/cash/icons-process-success.png\") no-repeat; background-size:100%"></view>
+            <view class="cash-title">审核通过</view>
+            <view class="cash-desc">{{callback_time}}</view>
+        </view>
+        <view class="process-items-last">
+            <view class="icons-process-mark" style="background: url(\"https://jp.juancdn.com/wxMapp/cash/icons-process-success.png\") no-repeat; background-size:100%"></view>
+            <view class="cash-title">提现到账</view>
+            <view class="cash-desc">已提现成功，请在微信-钱包-我的零钱查看余额</view>
+        </view>
+    </view>
+    <view class="cash-process process-failed" wx:if="{{cash_status==3}}">
+        <view class="process-items">
+            <view class="icons-process-mark" style="background: url(\"https://jp.juancdn.com/wxMapp/cash/icons-process-failed.png\") no-repeat; background-size:100%"></view>
+            <view class="cash-title">审核不通过</view>
+            <view class="cash-desc">{{callback_time}}</view>
+            <view class="cash-desc">提现申请被驳回，请联系客服处理！</view>
+        </view>
+        <view class="process-items-last">
+            <view class="icons-process-mark" style="background: url(\"https://jp.juancdn.com/wxMapp/cash/icons-process-default.png\") no-repeat; background-size:100%"></view>
+            <view class="cash-title">提现失败</view>
+            <view class="cash-desc">提现失败，请尽快联系客服处理！</view>
+        </view>
+    </view>
+    <view class="withdrawal-opts">
+        <view class="opts-info">
+            <text class="opts-label">提现方式</text>
+            <text class="opts-handle">微信提现</text>
+        </view>
+        <view class="opts-info">
+            <text class="opts-label">提现到</text>
+            <text class="opts-handle">微信账号：{{nickname}}</text>
+        </view>
+        <view class="opts-info">
+            <text class="opts-label">提现时间</text>
+            <text class="opts-handle">{{add_time}}</text>
+        </view>
+    </view>
+</view>

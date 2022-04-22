@@ -1,0 +1,4 @@
+<view class="toast-msg" wx:if="{{toastMsg}}">
+    <view wx:if="{{toastTitle}}">{{toastTitle}}</view>
+    {{toastMsg}}
+</view>

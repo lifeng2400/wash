@@ -1,0 +1,126 @@
+<include src="/compon/toast/toast.wxml"></include>
+<include src="/components/error-msg/error-msg.wxml"></include>
+<block wx:if="{{ready}}">
+    <view wx:if="{{!next}}">
+        <view class="balance-box">
+            <navigator bindtap="statisticsTap" data-activity="click_vip_item" data-activityparam="balance" hoverClass="none" url="./accountDetail">
+                <view class="balance-title">明细</view>
+            </navigator>
+            <view class="balance-account">账户积分 (元)</view>
+            <view class="balance-num">{{uminfo.mymycount}}</view>
+            <!-- <view class="balance-tips" >
+                <text>含活动赠送金：{{actAmount}}2元</text>
+                <text bindtap="showTip" class="balance-mark" data-activity="click_balance_act_tips" data-activityparam="" style="background: url(\"https://jp.juancdn.com/wxMapp/vip/icons-balance-tips.png\") no-repeat;background-size:100%;"></text>
+            </view> -->
+        </view>
+        <view class="withdraw-details">
+            <view class="tel-num">输入提现积分</view>
+            <view class="code-info">
+                <text class="doll-mark">¥</text>
+                <input bindinput="checkBalance" class="code-input" placeholder="{{placeholder}}" placeholderClass="phcolor" type="digit"></input>
+            </view>
+            <button bindtap="submitNext" class="apply-sub {{disable?'':'enabled'}}">提现</button>
+            <view class="withdraw-desc" style="color:#ff9966">
+                <!-- <view>由于平台业务调整，将于2018年7月21日起，停止VIP续期服务和新VIP注册服务。在2018年7月21前已属于VIP的用户，继续享受VIP商品及返利，提现规则不变。
+               </view> -->
+            </view>
+            <view class="withdraw-desc">
+                <view>1、VIP的积分可提现，也可用来购物；</view>
+                <view>2、每天可提现1次，金额满20 可以提现；</view>
+                <view>3、提现后1～3个工作日到账，节假日顺延</view>
+                <view>4、提现手续费为1%。</view>
+            </view>
+        </view>
+    </view>
+    <view wx:else>
+        <form bindsubmit="submitCash">
+            <view class="withdraw-way">
+                <!-- <view class="ways gray-bd">请选择提现方式</view> -->
+                <view class="ways">
+                    <!-- <text class="icons-wx-logo" style="background: url(\"https://jp.juancdn.com/wxMapp/cash/icons-wx-logo.png\") no-repeat; background-size: 100%;"></text> -->
+                    <text class="wx-pay-txt">支付宝 <text class="txt-gray">(约1~3个工作日到账)</text>
+                    </text>
+                    <text class="icons-check-mark" style="background: url(\"https://jp.juancdn.com/wxMapp/cash/icons-check-on.png\") no-repeat; background-size: 100%;"></text>
+                </view>
+
+      
+           <view class="withdraw-details-next" >
+            <view class="tel-num">姓名{{cryptPhone}}</view>
+                <view class="code-info">
+                    <input bindinput="checkLength" class="code-input" maxlength="6" name="code" placeholder="姓名" placeholderClass="phcolor" type="number"></input>
+                    <button bindtap="getAuthCode" class="code-txts {{authCodeDisabled?'':'enabled'}}">{{authCodeText}}</button>
+                </view>
+
+
+                <view class="tel-num">支付宝号{{cryptPhone}}</view>
+                <view class="code-info">
+                    <input bindinput="checkLength" class="code-input" maxlength="6" name="code" placeholder="支付宝号" placeholderClass="phcolor" type="number"></input>
+                    <button bindtap="getAuthCode" class="code-txts {{authCodeDisabled?'':'enabled'}}">{{authCodeText}}</button>
+                </view>
+                <button class="apply-sub {{canSubmit?'enabled':''}}" disabled="{{!canSubmit}}" formType="submit">提交申请</button>
+            </view>  
+           
+
+            </view>
+
+        </form>
+    </view>
+</block>
+<view class="tips-dialog" wx:if="{{showTips}}">
+    <view class="dialog-ceng"></view>
+    <view class="dialog-content">
+        <view class="close-dialog">
+            <image bindtap="hideTip" class="icons-close" src="https://jp.juancdn.com/wxMapp/vip/icons-handle-close.png"></image>
+        </view>
+        <view class="tips-dialog-h1">
+            <text>活动赠送金</text>
+        </view>
+        <view class="tips-content">
+            <view class="tips-item">
+                <text class="txt-info">活动：{{actInfo.title}}</text>
+            </view>
+            <view class="tips-item" wx:if="{{rebateTime}}">
+                <text class="txt-info">赠送日期：{{rebateTime}}</text>
+            </view>
+            <view class="tips-item">
+                <text class="txt-info">过期日期：{{actInfo.valid}}</text>
+            </view>
+            <view class="tips-item">
+                <text class="txt-info">提现要求：账户余额达{{actInfo.cash_limit}}元</text>
+            </view>
+        </view>
+    </view>
+</view>
+<view class="activitied-dialog" wx:if="{{showRule}}">
+    <view class="dialog-content2">
+        <view class="close-dialog2">
+            <image bindtap="hideRule" class="icons-close" src="https://jp.juancdn.com/wxMapp/activity/icons-close.png"></image>
+        </view>
+        <view class="dialog-title">
+            <text>活动规则</text>
+        </view>
+        <view class="activitiy-rule">
+            <view class="items">
+                <text class="rule-info">1.活动时间：{{actInfo.start}} 10:00:00 - {{actInfo.end}} 10:00:00</text>
+            </view>
+            <view class="items">
+                <text class="rule-info">2.活动期间，每个用户均可登并领取现金红包，红包有效期3天，在3天内邀请好友助力后可增大红包（好友须通过你的邀请访问，且之前未被他人邀请登陆过），当红包金额大于或等于{{actInfo.money}}元时，则可以提现至余额。</text>
+            </view>
+            <view class="items">
+                <text class="rule-info">3.邀请好友助力时，还可以额外随机获得10元无门槛优惠券和卷皮VIP资格。</text>
+            </view>
+            <view class="items">
+                <text class="rule-info">4.卷皮VIP购买商品或分享商品给好友可得高额佣金返现，随时可提现。活动赠送8.8元需余额总额达20元时可提至微信零钱。</text>
+            </view>
+            <view class="items">
+                <text class="rule-info">5.活动期间，所有的奖励每个用户仅限领取一次。</text>
+            </view>
+            <view class="items">
+                <text class="rule-info">6.同设备、手机号、微信号、卷皮账号都视为同一用户。</text>
+            </view>
+            <view class="items" style="margin-bottom:50rpx;">
+                <text class="rule-info">7.有任何疑问可咨询卷皮网客服。</text>
+            </view>
+        </view>
+    </view>
+</view>

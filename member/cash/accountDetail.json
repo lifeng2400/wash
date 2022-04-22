@@ -1,0 +1,7 @@
+{
+    "enablePullDownRefresh": false,
+    "navigationBarTitleText": "收支明细",
+    "backgroundTextStyle": "dark",
+    "navigationBarBackgroundColor": "#ff464e",
+    "navigationBarTextStyle": "white"
+}

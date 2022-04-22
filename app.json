@@ -1,0 +1,66 @@
+{
+  "pages": [
+    "shop/menu/menu",
+    "shop/index/index",
+    "order/list/list",
+    "category/list/list",
+    "address/list/list",
+    "food/list/list",
+    "member/index/index",
+    "member/person/person",
+    "food/add/add",
+    "category/add/add",
+    "shop/setting/setting",
+    "order/remark/remark",
+    "order/checkout/checkout",
+    "address/add/add",
+    "address/search/search",
+    "order/detail/detail",
+    "shop/cart/cart",
+    "shop/map/index",
+    "order/orderPay/orderPay",
+    "member/sharecode/sharecode"
+  ],
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示" 
+    }
+  },
+  "window": {
+    "navigationBarBackgroundColor": "#4CAF50",
+    "navigationBarTitleText": "小熊工厂洗",
+    "navigationBarTextStyle": "white"
+  },
+  "tabBar": {
+    "selectedColor": "#4CAF50",
+    "list": [
+ 
+      {
+        "pagePath": "shop/menu/menu",
+        "iconPath": "images/icon_home.png",
+        "selectedIconPath": "images/icon_home_selected.png",
+        "text": "首页"
+      },
+
+      {
+        "pagePath": "shop/map/index",
+        "iconPath": "images/categoryed.png",
+        "selectedIconPath": "images/category.png",
+        "text": "自取点"
+      },
+      {
+        "pagePath": "order/list/list",
+        "iconPath": "images/icon_cate.png",
+        "selectedIconPath": "images/icon_cate_selected.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "member/person/person",
+        "iconPath": "images/icon_member.png",
+        "selectedIconPath": "images/icon_member_selected.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

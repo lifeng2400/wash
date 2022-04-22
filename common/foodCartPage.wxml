@@ -1,0 +1,20 @@
+<wxs module="filter" src="../utils/numbertofix.wxs"></wxs>
+
+<template name="foodCartPage">
+  <view animation="{{animationData}}" class="commodity_attr_box" style="height: {{cartHeight}}rpx; bottom: -{{cartHeight}}rpx;">
+    <view class="modal-header">
+      <text class="modal-title">购物车</text>
+    </view>
+    <scroll-view class="modal-body" scroll-y="true" style="height: {{scrollHeight}}rpx;">
+      <view class="item" wx:for="{{foodChoosed}}" wx:key="">
+          <view class="title">{{item.foodName}}</view>
+          <view class="fee">{{filter.numberToFix(item.price * item.numb)}}</view>
+          <view class="food-numb">
+            <view class="remove" bindtap="removeFromTrolley" hidden="{{ item.numb == 0 }}" data-productid="{{item.id}}">-</view>
+            <text class="text" hidden="{{item.numb == 0}}">{{ item.numb }}</text>
+            <view class="add" bindtap="addToTrolley" data-productid="{{item.id}}">+</view>
+          </view>
+      </view>
+    </scroll-view>
+  </view>
+</template>

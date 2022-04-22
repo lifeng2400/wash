@@ -1,0 +1,61 @@
+<!--pages/menu/menu.wxml-->
+<import src="../../common/foodPage.wxml" />
+<import src="../../common/foodCartPage.wxml" />
+
+<view class="totalcontainer" disable-scroll="true">
+<!-- 店招 -->
+<view class="hd">
+
+  <swiper indicator-dots="{{indicatorDots}}" autoplay="{{true}}" interval="5000" duration="1000" >
+  <block wx:for="{{seller.ad}}" wx:key='{{index}}'>
+    <swiper-item>
+      <image src="{{murl}}{{item}}" class="slide-image" />
+    </swiper-item>
+  </block>
+
+  <swiper-item>
+  <image class="logo" src="{{seller.logourl}}" />
+	  <view class="banner">
+		<view class="seller">{{seller.name}}</view>
+		<view class="business-time">{{seller.notice}}</view>
+		<view class="business-time">上门取件时间 {{seller.business_start}} - {{seller.business_end}}</view>
+	</view>
+  </swiper-item>
+</swiper>
+
+</view>
+
+
+
+
+  <template is="foodPage" data="{{showmenu, selected, howMuch, cost, pullBar, foodPageHeight,seller}}" />
+  <view class="mask" wx:if="{{showCart}}" bindtap='closeCart'></view>
+  <template is="foodCartPage" data="{{animationData, foodChoosed, scrollHeight, cartHeight}}" />
+
+
+	<view class="kf">
+			<image class="kf-img" src="/images/telephone.png" bindtap="call"></image>
+	</view>
+</view>
+
+
+<view class="mask" wx:if="{{notice_status}}" bindtap='hideNotice' style="background: #000; z-index: 100;"></view>
+<view class="notice" id="notice" wx:if="{{notice_status}}" bindtap="tapNotice">
+        <view class="box">
+          <view class="box-hd">
+            <text class="box-title">详细信息</text>
+            <image class="box-close" src="/images/close.png" bindtap="hideNotice"></image>
+          </view>
+          <view class="box-bd">
+            <scroll-view scroll-y class="items" style="height:750rpx" show-scrollbar='{{false}}'>
+            <rich-text nodes="{{ mycontent }}"></rich-text>
+            </scroll-view>
+          </view>
+
+<view class='copright'>
+<view>技术支持：云南昆明</view>
+<view  bindtap='call'  >客服电话：13378719129</view>
+</view>
+
+        </view>
+</view>

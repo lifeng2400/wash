@@ -1,0 +1,110 @@
+<view class="vip-content" wx:if="{{vipType!=0}}">
+    <view bindtap="noticeTap" class="notice" wx:if="{{notice.txt}}">
+        <image class="laba" src="https://jp.juancdn.com/wxMapp/new-vip/icons-vip-laba.png"></image>
+        <text class="txt">{{notice.txt}}</text>
+        <text class="angle"></text>
+    </view>
+    <view class="vip-part">
+        <view class="vip-user">
+            <view class="person-pic">
+                <image class="pic" src="{{avatar}}"></image>
+            </view>
+            <view class="texts">
+                <text class="texts-h1">{{nickName}}</text>
+                <view class="texts-desc">{{endTimeStr}}
+        </view>
+            </view>
+            <view bindtap="shownotice" class="rule-links">VIP规则</view>
+        </view>
+        <view class="vip-card" style="background: url(\"https://jp.juancdn.com/wxMapp/new-vip/icons-vip-card.png\") no-repeat;background-size:100%;">
+            <view class="icons-vip-mark" style="background: url(\"{{vipImg}}\") no-repeat;background-size:100%;"></view>
+            <view class="vip-price">
+                <text class="num">累计收益(元)</text>
+                <text class="price-info">{{totalIncome}}</text>
+            </view>
+            <view class="account-info">
+                <navigator bindtap="statisticsTap" class="items" data-activity="click_vip_item" data-activityparam="account" hoverClass="none" url="/pages/vip/admitToAccount/admitToAccount">
+                    <view class="account-num">{{pendingIncome}}</view>
+                    <view class="account-txt">待入账 (元)</view>
+                </navigator>
+                <navigator bindtap="statisticsTap" class="items" data-activity="click_vip_item" data-activityparam="balance" hoverClass="none" url="/pages/user/cash/balance">
+                    <view class="account-num">{{balance}}</view>
+                    <view class="account-txt">余额 (元)</view>
+                </navigator>
+                <navigator bindtap="statisticsTap" class="items last" data-activity="click_vip_item" data-activityparam="fans" hoverClass="none" url="/pages/vip/myfans/index">
+                    <view class="account-num">{{fansNum}}</view>
+                    <view class="account-txt">粉丝数 (个)</view>
+                </navigator>
+            </view>
+        </view>
+        <view class="share-result">
+            <navigator bindtap="statisticsTap" class="items" data-activity="click_vip_item" data-activityparam="fxzq" hoverClass="none" url="/pages/vip/cashBack/index?type=2">
+                <view class="share-desc">分享赚钱 (元)</view>
+                <view class="share-num">{{shareIncome}}</view>
+            </navigator>
+            <navigator bindtap="statisticsTap" class="items last" data-activity="click_vip_item" data-activityparam="zgfx" hoverClass="none" url="/pages/vip/cashBack/index?type=3">
+                <view class="share-desc">自购返现 (元)</view>
+                <view class="share-num">{{selfIncome}}</view>
+            </navigator>
+        </view>
+    </view>
+    <view class="invite-content">
+        <template is="vipgoods" data="{{goods:VIPgoods,vipType:vipType}}"></template>
+    </view>
+</view>
+<view class="invite-content" wx:else>
+    <view class="my-invited">
+        <view class="invited-info">
+            <text class="invite-code">我的id：{{inviteCode}}</text>
+
+         <navigator bindtap="statisticsTap" class="vip-rule" data-activity="click_activity_rule" data-activityparam="" hoverClass="none" url="/pages/act/act?name=xcxvipgz">VIP规则
+      </navigator>
+        </view>
+        <view class="invite-vip01">
+            <image class="invite-vip01-pic" src="https://jp.juancdn.com/wxMapp/vip/invite-vip01.png"></image>
+            <view bindtap="showdetail" class="modal-btn"></view>
+        </view>
+    </view>
+    <view class="invite-part {{vipType>0?'no-bd':''}}">
+        <view class="invite-title">
+            <image class="icons-invite-title  {{vipType=='1'||vipType=='2'?'isvip':'overvip'}}" src="https://jp.juancdn.com/wxMapp/vip/invite-vip08.png"></image>
+        </view>
+        <view class="invite-peo">
+            <text>已邀请 <text class="txt-red">{{inviteNum}}</text> 个好友</text>
+        </view>
+        <view class="invite-button">
+            <button catchtap="showShare" class="invite-now" data-path="pages/vip/inviteResult/index?inviteCode={{inviteCode}}" data-shareimg="https://jp.juancdn.com/wxMapp/vip/share.png">
+                <view wx:if="{{vipType==1||vipType==2}}">继续邀请</view>
+                <view wx:else>邀请好友</view>
+            </button>
+        </view>
+    </view>
+    <block wx:if="{{vipType==0}}">
+        <import src="/components/vip-invite-goods/index.wxml"></import>
+        <view class="invite-part">
+            <view class="invite-vip02">
+                <image class="invite-vip02-pic" src="https://jp.juancdn.com/wxMapp/vip/invite-vip02.png"></image>
+            </view>
+            <view class="coupons-info">
+                <navigator hoverClass="none" url="/pages/vip/invite/coupon">
+                    <text class="invite-vip03" style="background: url(https://jp.juancdn.com/wxMapp/vip/invite-vip03.png); background-size: 100%;"></text>
+                </navigator>
+            </view>
+            <template is="newgoods" data="{{goods:NEWgoods}}"></template>
+        </view>
+        <template is="vipgoods" data="{{goods:VIPgoods,vipType:vipType}}"></template>
+
+    </block>
+    <view class="make-money-modal" wx:if="{{showdetail}}">
+        <view class="ceng"></view>
+        <view class="modal-content">
+            <view class="invite-vip05">
+                <image class="invite-vip05-pic" src="https://jp.juancdn.com/wxMapp/vip/invite-vip05.png"></image>
+            </view>
+            <view bindtap="closedetail" class="invite-vip06">
+                <image class="invite-vip06-pic" src="https://jp.juancdn.com/wxMapp/vip/invite-vip06.png"></image>
+            </view>
+        </view>
+    </view>
+</view>
+

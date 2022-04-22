@@ -1,0 +1,145 @@
+/*detail.wxss*/
+/**
+ *
+ * 配套视频教程请移步微信->小程序->灵动云课堂
+ * 关注订阅号【huangxiujie85】，第一时间收到教程推送
+ *
+ * @link http://blog.it577.net
+ * @author 黄秀杰
+ */
+
+page {
+	font-size: 16px;
+	color: #333;
+}
+
+/*头部*/
+.summary {
+	background: white;
+	text-align: center;
+	padding-bottom: 10px;
+}
+
+/*logo*/
+.summary .logo {
+	margin: 15px 0;
+	width: 80px;
+	height: 80px;
+	border-radius: 50%;
+}
+
+/*状态*/
+.status {
+	margin: 5px;
+}
+
+/*操作*/
+.operate {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	width: 80%;
+	margin: 15px auto;
+}
+
+/*操作按钮*/
+.operate .button {
+	width: 90px;
+	border-radius: 3px;
+	padding: 8px 13px;
+	margin: 15px;
+}
+
+/*取消*/
+.operate .cancel {
+	background: white;
+	border: 1px solid #ccc;
+	color: #666;
+}
+
+/*支付*/
+.operate .payment {
+	background: #f60;
+	color: white;
+}
+
+
+/*.摘要信息*/
+
+/*实付*/
+.item .total {
+	width: 100%;
+	text-align: right;
+	padding-right: 10px;
+	color: #f60;
+}
+
+/*待支付*/
+.item .total:before {
+	content: "实付 ￥";
+}
+
+.info {
+	padding-bottom: 5px;
+} 
+
+/*联系商家*/
+.contact {
+	width: 100px;
+	height: 20px;
+	margin: 8px auto;
+	border: 1px solid #e5e5e5;
+	border-radius: 5px;
+	padding: 8px 16px;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	color: #666;
+	font-size: 14px;
+}
+
+/*电话图标*/
+.telephone {
+	width: 20px;
+	height: 20px;
+}
+
+/*通用列表头*/
+.common-info {
+	margin-top: 10px;
+	color: #6e6e6e;
+	font-size: 14px;
+	background: white;
+}
+
+.common-info .hd {
+	padding: 14px;
+	border-bottom: 1px solid #eee;
+	margin-bottom: 6px;
+}
+
+.common-info .bd {
+	padding-left: 14px;
+	display: flex;
+	flex-direction: row;
+	align-items: top;
+	line-height: 220%;
+}
+
+/*模块标题*/
+.common-info .caption {
+	margin-left: 5px;
+	font-weight: bold;
+	font-size: 18px;
+	color: #333;
+	line-height: 200%;
+}
+
+.common-info .label {
+	width: 80px;
+}
+
+.common-info:last-child {
+	margin-bottom: 10px;
+}

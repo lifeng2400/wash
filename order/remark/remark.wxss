@@ -1,0 +1,33 @@
+/**
+ *
+ * 配套视频教程请移步微信->小程序->灵动云课堂
+ * 关注订阅号【huangxiujie85】，第一时间收到教程推送
+ *
+ * @link http://blog.it577.net
+ * @author 黄秀杰
+ */
+ 
+.textarea-container {
+	background: white;
+	padding: 20px;
+}
+
+/*输入框*/
+textarea {
+	background: #f5f5f5;
+	border: 1px solid #e2e2e2;
+	border-radius: 3px;
+	padding: 10px;
+	font-size: 14px;
+	min-height: 120px;
+	width: 100%;
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+
+/*确认按钮*/
+button {
+	margin: 20px;
+	background: #4cd964;
+	color: white;
+}

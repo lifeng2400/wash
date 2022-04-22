@@ -1,0 +1,19 @@
+<!-- 分类管理 -->
+<form onsubmit="add">
+	<view class="item">
+		<view class="title">分类名称</view>
+		<view class="subtitle">
+			<input type="text" name="title" value="{{category.title}}" placeholder="请填写分类名称" />
+		</view>
+	</view>
+	<view class="item">
+		<view class="title">排列序号</view>
+		<view class="subtitle">
+			<input type="number" name="priority" value="{{category.priority}}" placeholder="序号越小越靠前" />
+		</view>
+	</view>
+	<view class="buttons">
+		<button wx:if="{{isEdit}}" class="delete" bindtap="delete">删除</button>
+		<button form-type="submit" class="confirm">{{isEdit ? '修改' : '添加'}}</button>
+	</view>
+</form>

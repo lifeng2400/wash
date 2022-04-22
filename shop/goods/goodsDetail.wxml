@@ -1,0 +1,197 @@
+<import src="../../common/foodCartPage.wxml" />
+<swiper indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" indicator-active-color="{{indicatoractivecolor}}">
+  <block wx:for="{{imgUrls}}" wx:key='{{index}}'>
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" />
+    </swiper-item>
+  </block>
+</swiper>
+<view class='details'>
+  <view class='detailsTop'>
+    <view class='price'>
+      <text>¥{{good.GPrice}} </text>
+      <!-- <text> ¥{{good.original_price}}</text> -->
+    </view>
+    <view class='num'>销量：{{good.sales}}件</view>
+  </view>
+  <view class='detailsMid'>
+    <view>{{good.title}}
+    </view>
+    <!-- <view class='share' bindtap='showPopup'>
+      <image src='/images/icons/details_title_ic_share.png'></image> 分享</view> -->
+  </view>
+  <view class='detailsBottom'>{{good.G_Introduce}}</view>
+</view>
+
+
+
+<view class='choose' wx:if="{{fslse}}">
+  <view class='chooseView'>
+    <text>颜色</text>
+    <block wx:for="{{color}}" wx:key='{{index}}'>
+      <button class="{{classIndexColor == index?'btn1':'btn2'}}" data-index="{{index}}" bindtap='chooseColor'>{{item}}</button>
+    </block>
+  </view>
+  <view class='chooseView'>
+    <text>规格</text>
+   <block wx:for="{{specs}}" wx:key='{{index}}'>
+      <button class="{{classIndexSpecs == index?'btn1':'btn2'}}" data-index="{{index}}" bindtap='chooseSpecs'>{{item}}</button>
+    </block>
+  </view>
+  <view class='chooseView'>
+    <view class='chooseViewL'>
+      <text class='text'>数量</text>
+      <view class="stepper">
+        <!-- 减号 -->
+        <text class="{{minusStatus}}" bindtap="bindMinus">-</text>
+        <!-- 数值 -->
+        <input type="number" bindchange="bindManual" value="{{num}}" />
+        <!-- 加号 -->
+        <text class="normal" bindtap="bindPlus">+</text>
+      </view>
+    </view>
+    <!-- <text class='chooseViewLR'>库存：200件  </text> -->
+  </view>
+</view>
+<view class="weui-tab">
+  <view class="weui-navbar">
+    <block wx:for="{{tabs}}" wx:key="*this">
+      <view id="{{index}}" class="weui-navbar__item {{activeIndex == index ? 'weui-bar__item_on' : ''}}" bindtap="tabClick">
+        <view class="weui-navbar__title">{{item}}</view>
+      </view>
+    </block>
+  </view>
+  <view class="weui-tab__panel">
+    <view class="weui-tab__content" hidden="{{activeIndex != 0}}">
+    <rich-text nodes="{{good.content}}"></rich-text>
+    </view>
+    <view class="weui-tab__content" hidden="{{activeIndex != 1}}">
+      <view class='param'>品牌：</view>
+    </view>
+    <view class="weui-tab__content" hidden="{{activeIndex != 2}}">
+
+      <view class='comment'>
+        <view class='title'>
+          <text>买家：匿名</text>
+          <text class='time'>2018-10-10 20：25</text>
+        </view>
+        <view>
+          <text>很棒的一次购物。</text>
+        </view>
+      </view>
+      <view class='comment'>
+        <view class='title'>
+          <text>买家：匿名</text>
+          <text class='time'>2018-10-10 20：25</text>
+        </view>
+        <view>
+          <text>很棒的一次购物。</text>
+        </view>
+      </view>
+
+
+    </view>
+  </view>
+</view>
+
+
+<view class='bottomCont'>
+  <view class='bottomContL'>
+    <view>
+      <image src='/images/icons/details_nav_ic_service.png'></image>
+      <text>客服</text> </view>
+    <view bindtap='collection'>
+      <image src='{{collection?"/images/icons/details_nav_ic_collection_red.png":"/images/icons/details_nav_ic_collection.png"}}'></image>{{collection?'取消收藏':'收藏'}}</view>
+    <view bindtap='toCart'>
+      <image src='/images/icons/details_nav_ic_cart.png'></image>购物车</view>
+  </view>
+  <view class='bottomContR1' bindtap='addShopCar'>加入购物车</view>
+  <view class='bottomContR2' bindtap='buyNow'>立即购买</view>
+</view> 
+
+<view class="show-popup" hidden="{{hideShopPopup}}">
+    <view class="popup-mask" bindtap="closePopupTap"></view>
+    <view class="popup-contents">
+      <view class="pop-goods-info">
+        <view class="pop-img-box">
+          <image src="{{goodsDetail.basicInfo.pic}}" class="goods-thumbnail" />
+        </view>
+        <view class="pop-goods-des">
+          <view class="pop-goods-title">{{goodsDetail.basicInfo.name}}</view>
+          <view class="pop-goods-price" wx:if="{{shopType =='addShopCar' || shopType =='tobuy'}}">¥ {{selectSizePrice}}</view>
+          <view class="pop-goods-price" wx:if="{{shopType =='pingtuan'}}">¥ {{selectptPrice}}</view>
+        </view>
+        <view class="pop-goods-close" bindtap="closePopupTap"></view>
+      </view>
+      <view class="size-label-box">
+        <block wx:for="{{goodsDetail.properties}}" wx:for-item="property" wx:for-index="idx" wx:key="id">
+          <view class="label">{{property.name}}</view>
+          <view class="label-item-box">
+            <view class="label-item {{item.active ? 'active' : '' }}" wx:for="{{property.childsCurGoods}}" wx:key="id" bindtap="labelItemTap" data-propertyindex="{{idx}}" data-propertyid="{{property.id}}" data-propertyname="{{property.name}}" data-propertychildindex="{{index}}"
+              data-propertychildid="{{item.id}}" data-propertychildname="{{item.name}}">
+              {{item.name}}
+            </view>
+          </view>
+        </block>
+      </view>
+      <view class="buy-num-box">
+        <view class="num-label">购买数量</view>
+        <view class="num-box">
+          <view class="num-jian {{buyNumber == buyNumMin ? 'hui': ''}}" bindtap="numJianTap">-</view>
+          <view class="num-input">
+            <input type="number" value="{{buyNumber}}" disabled/>
+          </view>
+          <view class="num-jia {{buyNumber== buyNumMax ? 'hui': ''}}" bindtap="numJiaTap">+</view>
+        </view>
+      </view>
+      <view class="popup-join-btn" wx:if="{{shopType =='addShopCar'}}" bindtap="addShopCar">加入购物车</view>
+      <view class="popup-join-btn" wx:if="{{shopType =='tobuy'}}" bindtap="buyNow"> 立即购买</view>
+      <view class="popup-join-btn" wx:if="{{shopType =='pingtuan'}}" bindtap="buyPingtuan"> 立即开团</view>
+    </view>
+  </view>
+
+
+
+<view class="wx-popup" hidden="{{flag}}">
+  <view class='popup-container'>
+
+    <view class='shareTo'>
+      <button open-type="share">
+        <view open-type="share">
+          <image src='/images/details_share_pop_ic_wechat.png'></image>
+          <text>分享给朋友</text>
+        </view>
+      </button>
+      <view bindtap='showPoster'>
+        <image src='/images/details_share_pop_ic_poster.png'></image>
+        <text>生成海报</text>
+      </view>
+    </view>
+    <view bindtap='hidePopup' class='shareClose'>关闭</view>
+
+  </view>
+</view>
+
+
+<view class="wx-popup" hidden="{{flagPoster}}" catchtap='hidePoster'>
+  <view class='popup-containerP' catchtap='showPoster'>
+    <view class='userInfo'>
+      <image src='/images/icons/details_share_poster_ic_head_def.png'></image>
+      <view>
+        <text>用户名</text>
+        <text>分享给你一个商品</text>
+      </view>
+    </view>
+    <view class='cont'>
+    </view>
+    <view class='price'>
+      <text>￥29.00 </text>
+      <text> ￥32</text>
+    </view>
+    <view class='title'>Apple/苹果iPhone 11 ProMAX官网旗舰店256G全网通国行正品iPhone11手机
+    </view>
+    <view class='desc'>副标题描述</view>
+    <view class='miniPro'>
+      <image src='/images/imgs/miniPro.png' mode="widthFix" data-src="/images/miniPro.png" bindtap="previewImage"></image>长按识别小程序</view>
+  </view>
+</view>

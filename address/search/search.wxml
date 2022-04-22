@@ -1,0 +1,24 @@
+<view class="searcher">
+	<input type="text" bindinput="keywordTyping" placeholder="请输入地址" placeholder-class="placeholder-class" />
+</view>
+<view class="header">当前地址</view>
+<view class="current">
+<view style="width:80%">
+	<text bindtap="geoTapped" style="width:100%;display: block;">{{title}}</text>
+	<text bindtap="geoTapped" >{{address}}</text>
+</view>
+	<image bindtap="reloadCurrent" src="../../images/geo.png" />
+</view>
+<view class="header">搜索地址</view>
+<view class="list">
+	<view class="item" bindtap="addressTapped" 
+	data-title="{{item.title}}"  
+	 data-address="{{item.address}}" 
+	 data-addname="{{item.ad_info}}" 
+	 data-location="{{item.location}}" 
+	wx:for="{{result}}" wx:key="">
+
+		<text class="title">{{item.title}}</text>
+		<text class="address">{{item.address}}</text>
+	</view>
+</view>

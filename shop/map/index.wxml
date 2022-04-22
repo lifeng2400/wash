@@ -1,0 +1,59 @@
+<!--index.wxml-->
+<view class="scrollPage">
+  <view>
+  <map id='myMap' 
+  style="width: 100%; height:{{mapHeigth}};"
+  latitude="{{lat}}"
+  longitude="{{lon}}"
+  markers="{{storeItems}}"
+  show-location
+  enable-zoom
+  enable-scroll
+  scale='11'
+  bindmarkertap='handleMarker'
+  >
+  </map>
+</view>
+
+<cover-view class='search' bindtap='handleClick'>
+    <cover-image src='/images/address.png' class='address-image'></cover-image>
+    <cover-view class='search-city'>{{city}}</cover-view>
+</cover-view>
+
+
+<block wx:for="{{storeItems}}" wx:key>
+  <view class='card v-class store-list' >
+
+  <!-- <view class='card-title' wx:if="{{secondTitle != ''}}">{{secondTitle}}</view>
+  <slot name='second'></slot> -->
+      <view class='store-title'>
+       <image class="img" src="{{imgurl}}{{item.pic}}"></image>
+      </view>
+      <view class='activity'>
+        <text class='card-title'>{{item.Name}}</text>
+      </view>
+
+
+      <view class='activity'>
+      <text class='activity-content'>{{item.Sstime}}-{{item.Setime}}</text>
+      
+      <text class='red-tip' wx:if="{{index == 0}}">离你最近</text>
+      </view>
+
+      <view class='activity'>
+        <text class='activity-content'>{{item.Saddress}}</text>
+      </view>
+      <view class='activity'>
+        <text class='activity-content'>{{item.Stel}}</text>
+        <text class='red-tip' >{{item.distance}}</text>
+      </view>
+
+
+    </view>
+ 
+</block>
+
+
+
+
+</view>

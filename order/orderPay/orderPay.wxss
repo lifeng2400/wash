@@ -1,0 +1,128 @@
+/* pages/orderPay/orderPay.wxss */
+.list{
+  background-color: #fff;
+  font-size: 26rpx;
+  padding-left:24rpx;
+  margin-top:12rpx;
+}
+.listItem{
+  height:98rpx;
+  display:flex;
+  align-items: center;
+  padding-right: 24rpx;
+}
+.listItem label{
+  color:#282828;
+  flex: 1
+}
+.listItem.b_B{
+  border-bottom: 2rpx solid #efeff4; 
+}
+.listItem text{
+  color:#C5C5C5;
+  flex: 1;
+  text-align: right
+}
+.listItem text.cred{
+  color:#f44225;
+  font-size:40rpx;
+}
+/* 微信支付 */
+.wechatBtn{
+  height: 80rpx;
+  width: 502rpx;
+  border-radius: 10rpx;
+  background-color: #2ca640;
+  color: #fff;
+  font-size: 32rpx;
+  display: flex;
+  align-items: center;
+  margin: auto;
+}
+.wechatBtn .image1{
+width:66rpx;
+height:60rpx;
+margin-right:24rpx;
+margin-left:40rpx;
+} 
+.image{
+height:26rpx;
+width:16rpx;
+margin-left:24rpx;
+margin-right:40rpx;
+} 
+
+.wechatBtn .payL,.wechatBtn .payR{
+  flex: 1;
+  /* display: flex; */
+  align-items: center;
+  text-align: center;
+
+}
+.wechatBtn .payR{
+  justify-content: center}
+
+  .payment{
+    padding: 40rpx 35rpx;
+    background: #fff;
+  }
+  
+  .radio-group{
+  
+    position: relative;
+  }
+  
+  .item-image{
+    float: left;
+    width: 80rpx;
+    height: 80rpx;
+    overflow: hidden;
+  }
+  .item-image image{
+    width: 100%;
+  }
+  .item-h2{
+    padding: 8rpx 0 16rpx;
+    color: 3333;
+    font-size: 28rpx;
+    line-height: 28rpx;
+    padding-left: 100rpx;
+  }
+  .item-h6{
+    color: #999;
+    font-size: 24rpx;
+    line-height: 24rpx;
+    padding-left: 100rpx;
+  }
+  .item-radio{
+    position: absolute;
+    right: 0;
+    margin-top: -60rpx;
+  }
+  
+  
+  .radio
+  {
+    display: flow-root;
+    padding-top: 22rpx;
+  }
+
+
+  .weui-toptips {
+
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 5px;
+    font-size: 14px;
+    text-align: center;
+    color: #fff;
+    z-index: 5000;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+.weui-toptips_warn {
+    background-color: #ffbe00 !important;
+}

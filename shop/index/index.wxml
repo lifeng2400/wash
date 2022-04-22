@@ -1,0 +1,44 @@
+<!-- 首页 -->
+<!-- 店招 -->
+<view class="hd">
+	<image class="logo" src="{{seller.logourl}}" />
+	<view class="banner">
+		<view class="seller">{{seller.name}}</view>
+		<view class="notice">{{seller.notice}}</view>
+		<view class="business-time">营业时间 {{seller.business_start}} - {{seller.business_end}}</view>
+	</view>
+</view>
+<!-- 菜品 -->
+<view class="bd"  wx:for="{{showmenu}}">
+<view class='shopSection'>
+<view class='shopTitle'>
+<image  src='../../assets/icons/home_list_ic_hot.png'></image> <text>{{item.typeName}}</text>
+</view>
+
+<view class='shopList' >
+
+  <view class='listItem' bindtap='togoodsDetail' wx:for="{{item.menuContent}}" data-gid="{{item.id}}">
+    <image src='{{item.pic}}'></image>
+    <view class='itemBottom'>
+      <text class='title'>{{item.foodName}}</text>
+      <view class='price'>
+        <view>
+          <text>{{item.price}}</text>
+          <!-- <text>¥39</text> -->
+        </view>
+        <button>购买</button>
+        
+      </view>
+    </view>
+</view>
+
+
+</view>
+
+
+</view>
+
+
+</view>
+
+<view class='bottomLine'> <text>我们也是有底线的</text></view>

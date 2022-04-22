@@ -1,0 +1,9 @@
+var filter = {
+  numberToFix: function (value) {
+    return Number(value.toFixed(2))
+  }
+}
+
+module.exports = {
+  numberToFix: filter.numberToFix
+}
